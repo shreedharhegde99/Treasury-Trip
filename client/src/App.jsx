@@ -1,7 +1,8 @@
+import AllRoutes from "./allRoutes/AllRoutes";
 import "./App.css";
 
 function App() {
-  return <div>Treasure Trip</div>;
+  return (<AllRoutes/>)
 }
 
 export default App;

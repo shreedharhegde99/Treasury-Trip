@@ -1,9 +1,11 @@
-import { Route, Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Flights } from "../pages/Flights";
 
 export default function AllRoutes() {
   return (
-    <Router>
+    <Routes>
       <Route path="/" element="" />
-    </Router>
+      <Route path="/flights" element={<Flights/>}/>
+    </Routes>
   );
 }
