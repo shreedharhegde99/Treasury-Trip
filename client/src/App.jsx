@@ -1,9 +1,8 @@
 import "./App.css";
-import UpperSection from "./components/Attraction/UpperSection";
 
 function App() {
   return <div>Treasure Trip
-    <UpperSection/>
+    
   </div>;
 }
 
