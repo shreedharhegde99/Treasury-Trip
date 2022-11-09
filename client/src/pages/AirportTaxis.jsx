@@ -246,7 +246,6 @@ export default function AirportTaxi() {
           p="4"
           direction={{ base: "column", lg: "row" }}
           gap={{ lg: "40" }}
-          w="max-content"
         >
           <VStack spacing={{ base: "6", lg: "20" }} maxW={{ lg: "50%" }}>
             <AirportTransfers
@@ -315,17 +314,17 @@ export default function AirportTaxi() {
         </Flex>
       </VStack>
 
-      <Box>
+      <Box px="4" py="6">
         <Box>
           <Heading as="h2" size="sm" py="6">
             Airport taxis for any kind of trip
           </Heading>
         </Box>
-        <Flex gap="10" overflow="scroll" maxW="100vw">
+        <Flex overflow="scroll" gap="6" >
         <AirportTaxiCards 
         type="Standard"
         vehicle="Skoda octavia or similar"
-        passengers=" 3 passengers"
+        passengers=" 3 passengers" 
         bags="2 standard bags"
         included="Meet & Greet included"
         cancellation="Free cancellation"
