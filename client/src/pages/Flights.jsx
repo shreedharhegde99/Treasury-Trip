@@ -1,3 +1,4 @@
+
 import { Container } from "@chakra-ui/react";
 import React from "react";
 import { BookFlight } from "../components/Flights/Bookflight";
@@ -18,3 +19,4 @@ export const Flights=()=>{
         </Container>
     )
 }
+
