@@ -20,7 +20,6 @@ export default function ExploreMoreDestination() {
             <SouthAmerica/>
             <Carribean/>
             <CentralAmerica/>
-
         </>
     )
 }
