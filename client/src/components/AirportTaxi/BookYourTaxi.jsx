@@ -21,10 +21,11 @@ import {
 import { Fragment, useState } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { BsPersonFill, BsInfoCircle } from "react-icons/bs";
+import { BsPersonFill } from "react-icons/bs";
 import { RiPlaneFill } from "react-icons/ri";
 import { GrCreditCard } from "react-icons/gr";
 import { GoCheck } from "react-icons/go";
+import CoronaAlert from "./CoronaAlert";
 
 export default function BookYourTaxi() {
   const [trip, setTrip] = useState("oneway");
@@ -32,31 +33,7 @@ export default function BookYourTaxi() {
   const [min, setMin] = useState("");
   return (
     <Fragment>
-      <Box p="4" maxW="container.lg" m="auto">
-        <Accordion allowMultiple>
-          <AccordionItem>
-            <AccordionButton w="full">
-              <Flex w="full" justify="space-between">
-                <Stack direction="row" align="center">
-                  <BsInfoCircle color="red" />
-                  <Text>Protecting you during COVID-19</Text>
-                </Stack>
-                <AccordionIcon />
-              </Flex>
-            </AccordionButton>
-            <AccordionPanel>
-              <Box>
-                Your safety matters. From July 2020, we’re asking all customers
-                to wear a face covering when travelling with us. If you don’t
-                wear a face covering, your driver may not be able to start your
-                journey. Where Coronavirus may affect your plans, here’s what
-                you need to know about booking with us at this time.
-              </Box>
-              <Box>Read more</Box>
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-      </Box>
+      <CoronaAlert />
       {/* Taxi search section */}
       <Box p="4" maxW="container.lg" m="auto">
         <Box>

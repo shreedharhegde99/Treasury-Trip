@@ -1,0 +1,51 @@
+[
+  {
+    "image": "https://images.taxi.booking.com/images/cars/standard.webp",
+    "type": "Standard",
+    "persons": "Up to 3",
+    "bags": "2",
+    "price": "100"
+  },
+  {
+    "image": "https://images.taxi.booking.com/images/cars/people-carrier.webp",
+    "type": "People carrier",
+    "persons": "Up to 5",
+    "bags": "4",
+    "price": "150"
+  },
+  {
+    "image": "https://images.taxi.booking.com/images/cars/executive.webp",
+    "type": "Executive",
+    "persons": "Up to 4",
+    "bags": "3",
+    "price": "250"
+  },
+  {
+    "image": "https://images.taxi.booking.com/images/cars/large-people-carrier.webp",
+    "type": "Large people carrier",
+    "persons": "Up to 12",
+    "bags": "12",
+    "price": "300"
+  },
+  {
+    "image": "https://images.taxi.booking.com/images/cars/executive-people-carrier.webp",
+    "type": "Executive people carrier",
+    "persons": "Up to 6",
+    "bags": "6",
+    "price": "300"
+  },
+  {
+    "image": "https://images.taxi.booking.com/images/cars/luxury.webp",
+    "type": "Luxury",
+    "persons": "Up to 4",
+    "bags": "3",
+    "price": "500"
+  },
+  {
+    "image": "https://images.taxi.booking.com/images/cars/minibus.webp",
+    "type": "Minibus",
+    "persons": "Up to 10",
+    "bags": "10",
+    "price": "700"
+  }
+]
