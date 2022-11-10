@@ -17,7 +17,7 @@ const oceania=[]
 
 
         </Heading>
-        <Text mt="20px">Flights from wherever you are to wherever you want to go
+        <Text mt="20px">Flights From wherever you are to wherever you want to go
 
 
         </Text>
