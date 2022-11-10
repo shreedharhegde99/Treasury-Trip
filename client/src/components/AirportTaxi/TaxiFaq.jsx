@@ -17,8 +17,13 @@ export default function TaxiFaq() {
   return (
     <Box py="12" maxW="container.xl" m="auto">
       <Stack direction={{ base: "column", lg: "row" }}>
-        <Box px="4" w={{ lg: "max-content" }} minW={{ lg: "2xl" }} textAlign={{lg:"center"}}>
-          <Heading as="h2" size={{base:"sm",lg:"md"}}>
+        <Box
+          px="4"
+          w={{ lg: "max-content" }}
+          minW={{ lg: "2xl" }}
+          textAlign={{ lg: "center" }}
+        >
+          <Heading as="h2" size={{ base: "sm", lg: "md" }}>
             Find out more about our airport taxi service
           </Heading>
           <Text>
@@ -37,7 +42,7 @@ export default function TaxiFaq() {
         <Box w={{ lg: "2xl" }}>
           <Accordion allowMultiple>
             {data.map((el) => (
-              <AccordionItem>
+              <AccordionItem key={el.title}>
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
