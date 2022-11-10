@@ -9,15 +9,15 @@ export default function UpperSection() {
            <Box bg='#F5F5F5' w='100%' h="auto" pb='20'>           
                  <h1 style={{fontSize:"30px",fontWeight:"bold",marginLeft:"20%",paddingTop:"30px"}}>Find and book a great experience</h1>
                  <p  style={{fontSize:"18px",color:"grey",marginLeft:"20%"}}>Discover more of your destination and make the most of your trip</p>
-                 <HStack w="70%" style={{marginTop:"27px",marginLeft:"20%",marginRight:"100%"}}>
+                 <HStack  w="70%" style={{marginTop:"27px",marginLeft:"20%"}}>
                     <InputGroup>
                     <InputLeftElement 
                         children={<GiTreeDoor color='gray.300' size="30px" />}
                     />
-                        <Input p="25px" pl="40px" placeholder='Where are you going'/>
+                        <Input border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  p="25px" pl="40px" placeholder='Where are you going'/>
                     </InputGroup>                   
-                      <Input cursor="pointer" placeholder='Select your dates' type="date" p="25px" pl="40px"/>                   
-                   <Button bg="#006CE4" color="white" p="25px 40px 25px 40px">Search</Button>
+                      <Input border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" placeholder='Select your dates' type="date" p="25px" pl="40px"/>                   
+                   <Button border="4px" borderColor={"orange"} bg="#006CE4" color="white" p="25px 40px 25px 40px">Search</Button>
                  </HStack>
            </Box>
            <Box style={{borderRadius:"10px",border:"1px solid lightgrey",width:"80%",height:"80px",margin:"auto",marginTop:"40px"}}> 
