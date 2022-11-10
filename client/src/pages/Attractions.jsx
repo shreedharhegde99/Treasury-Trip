@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import NavbarR from "../components/NavbarR";
 
 const Attractions = () => {
   return (
     <div>
-      Attractions
+      <NavbarR />
+    
     </div>
-  )
-}
+  );
+};
 
-export default Attractions
+export default Attractions;

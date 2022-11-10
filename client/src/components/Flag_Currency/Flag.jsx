@@ -1,7 +1,5 @@
-import {ChevronDownIcon} from "@chakra-ui/icons";
 import {
   Button,
-  Flex,
   Image,
   Menu,
   MenuButton,
@@ -32,10 +30,14 @@ const Flag = () => {
 
   return (
     <>
-      <Menu>
+      <Menu bg="teal">
         <MenuButton
+          // border="4px solid"
           bg={"transparent"}
+          w={["40%", "40%", "30%", "45%"]}
           fontWeight={"bolder"}
+          _expanded={{bg: "transparent"}}
+          // _focus={{bg:"black"}}
           fontSize={"14px"}
           _hover={{textDecorationLine: "none"}}
           textDecorationLine={"underline"}
@@ -45,9 +47,9 @@ const Flag = () => {
           spinnerPlacement="end"
         >
           {!name ? (
-            <Image m={"auto"} w={"40%"} src="https://flagcdn.com/in.svg" />
+            <Image m={"auto"} src="https://flagcdn.com/in.svg" />
           ) : (
-            <Image m={"auto"} w={"40%"} src={name} />
+            <Image m={"auto"} src={name} />
           )}
         </MenuButton>
         <MenuList
@@ -58,7 +60,7 @@ const Flag = () => {
           w={["full"]}
         >
           <SimpleGrid
-            columns={[1, 3, 4, 4]}
+            columns={[1, 1, 2, 3, 4]}
             pl={2}
             pb={2}
             row={3}
@@ -72,7 +74,9 @@ const Flag = () => {
                   zIndex={"20"}
                   key={i}
                   onClick={() => setNAme(el.flag)}
-                  _hover={{border: "1px solid", bg: "transparent"}}
+                  _expanded={{bg: "transparent"}}
+                  _focus={{bg: "transparent"}}
+                  _hover={{bg: "transparent"}}
                 >
                   <Image w={5} mr={1} src={el.flag} />
                   {el.name}

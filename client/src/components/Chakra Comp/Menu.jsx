@@ -62,7 +62,7 @@ const MenuBar = () => {
                 Attractions
               </Box>
             </Link>
-            <Link to="/airport_taxi">
+            <Link to="/taxis">
               <Box display={"flex"} flexDir="column" alignItems={"center"}>
                 <FaTaxi />
                 Airport+Taxi
