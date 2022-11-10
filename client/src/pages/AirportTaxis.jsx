@@ -32,6 +32,7 @@ import { RiPlaneFill } from "react-icons/ri";
 import images from "../assets/airportTaxi.json";
 import AirportTransfers from "../components/AirportTaxi/AirportTransfers";
 import AirportTaxiCards from "../components/AirportTaxi/AirportTaxiCards";
+import TaxiFaq from "../components/AirportTaxi/TaxiFaq";
 
 const { how_it_works, taxi, driver, destination } = images;
 export default function AirportTaxi() {
@@ -475,6 +476,8 @@ export default function AirportTaxi() {
           </Grid>
         </Show>
       </Box>
+
+      <TaxiFaq/>
     </Fragment>
   );
 }
