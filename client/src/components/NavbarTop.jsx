@@ -2,11 +2,13 @@ import React from "react";
 import {Box, Button, Heading, Show, Text, Hide} from "@chakra-ui/react";
 import MenuBar from "./Chakra Comp/Menu";
 import Flag from "./Flag_Currency/Flag";
+import {Link} from "react-router-dom";
 // import Logo from "../assets/Logo.png"
 export const NavbarTop = () => {
   return (
     <>
       <Box
+        // border={"1px solid"}
         display="flex"
         bg="teal.800"
         w="100%"
@@ -22,7 +24,7 @@ export const NavbarTop = () => {
         >
           <Heading fontSize={["md", "md", "2xl"]} fontFamily={"monospace"}>
             {" "}
-            Treasury Trip
+            <Link to="/stays">Treasury Trip</Link>
           </Heading>
         </Box>
         <Box
@@ -38,13 +40,13 @@ export const NavbarTop = () => {
             mr={["50px", "50px", "10px", "30px"]}
             alignItems="center"
           >
-            <Text fontSize={["sm", "md", "lg"]}>INR</Text>
+            <Text fontSize={["sm", "md"]}>INR</Text>
             <Flag />
           </Box>
           <Hide breakpoint="(max-width: 1024px)">
             <Button
               bg="teal"
-              fontSize={["sm", "md", "lg"]}
+              fontSize={["sm", "md"]}
               p={5}
               _hover={{
                 background: "white",
@@ -55,8 +57,14 @@ export const NavbarTop = () => {
             </Button>
           </Hide>
           <Hide breakpoint="(max-width: 600px)">
-            <Button color={"black"}>Register</Button>
-            <Button color={"black"}>Login</Button>
+            <Link to="/register">
+              {" "}
+              <Button color={"black"}>Register </Button>
+            </Link>
+            <Link to="/login">
+              {" "}
+              <Button color={"black"}>Login</Button>
+            </Link>
           </Hide>
         </Box>
         <Show breakpoint="(max-width: 600px)">

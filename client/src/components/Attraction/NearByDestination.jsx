@@ -14,27 +14,45 @@ import MiddleEast from "./exploreMoreDestination/MiddelEast";
 import NorthAmerica from "./exploreMoreDestination/NorthAmerica";
 import SouthAmerica from "./exploreMoreDestination/SouthAmerica";
 import Asia from "./exploreMoreDestination/Asia";
+
 export default function NearByDestination() {
     return (
         <>
            <h1 style={{fontSize:"20px",fontWeight:"bold" ,marginTop:"20px",marginLeft:"10%"}}>Nearby Destination</h1>
-           <Box style={{marginLeft:"10%",marginTop:"10px"}}>
-               <Grid  h='200px' w="90% "
+           <Box h={{sm:'10%',md:'90%',lg:'30%'}} style={{marginLeft:"10%",marginTop:"10px"}}>
+               <Grid w="90% "
                     templateColumns={{lg:"repeat(3,1fr)",md:"repeat(2,1fr)",sm:"1fr"}}
                     templateRows='repeat(2, 1fr)'
-                    gap={4}>
-                     <div style={{border:"5px solid red",borderRadius:"10px",height:"180px"}}>sandeep</div>
-                     <div style={{border:"5px solid red",borderRadius:"10px",height:"180px"}}>gond</div>
-                     <div style={{border:"5px solid red",borderRadius:"10px",height:"180px"}}>ashish</div>   
-                     <div style={{border:"5px solid red",borderRadius:"10px",height:"180px"}}>ashish</div>     
+                    gap={5}
+                    >
+                     <div className="container_san"> 
+                       <img src="https://q-xx.bstatic.com/xdata/images/city/533x300/684947.jpg?k=ed28ddbf579fa491991e83bfda5904a0bb70041575f1da447677da7c19a930ae&o=" alt="" />
+                       <p className="text">Varanasi</p>
+                       <p className="text2">60 things to do</p>
+                     </div>
+                     <div className="container_san">
+                        <img src="https://q-xx.bstatic.com/xdata/images/city/533x300/684947.jpg?k=ed28ddbf579fa491991e83bfda5904a0bb70041575f1da447677da7c19a930ae&o=" alt="" />
+                        <p className="text">Varanasi</p>
+                       <p className="text2">60 things to do</p>
+                     </div>
+                     <div className="container_san">
+                        <img src="https://q-xx.bstatic.com/xdata/images/city/533x300/684947.jpg?k=ed28ddbf579fa491991e83bfda5904a0bb70041575f1da447677da7c19a930ae&o=" alt="" />
+                        <p className="text">Varanasi</p>
+                       <p className="text2">60 things to do</p>
+                     </div>   
+                     <div className="container_san">
+                        <img src="https://q-xx.bstatic.com/xdata/images/city/533x300/684947.jpg?k=ed28ddbf579fa491991e83bfda5904a0bb70041575f1da447677da7c19a930ae&o=" alt="" />
+                        <p className="text">Varanasi</p>
+                       <p className="text2">60 things to do</p>
+                     </div>     
                </Grid>
            </Box> <br /><br /><br /><br /><br /><br /><br />
-           <div style={{borderRadius:"10px",border:"1px solid lightgrey",width:"80%",height:"120px",margin:"auto",marginTop:"40px",marginBottom:"10px"}}> 
+           <div style={{borderRadius:"10px",border:"1px solid lightgrey",width:"80%",height:"120px",margin:"auto",marginTop:"-120px",marginBottom:"10px"}}> 
             <h1  style={{fontSize:"16px",fontWeight:"bold",marginLeft:"2%",marginTop:"10px"}}>Sign in to save time</h1>
-            <p style={{marginLeft:"2%",paddingTop:"5px"}}>Your Booking.com account lets you book using your saved details <br /><br /><Link to="/signIn"><span style={{color:"#4F6CE8",cursor:"pointer",marginLeft:"-15px",marginLeft:".1%"}}>Sign in</span></Link></p>
+            <p style={{marginLeft:"2%",paddingTop:"5px"}}>Your Booking.com account lets you book using your saved details <br /><br /><Link to="/signIn"><span style={{color:"#4F6CE8",cursor:"pointer",marginLeft:".1%"}}>Sign in</span></Link></p>
            </div><br />
            <hr className="hr"/>          
-           {/* <h1 style={{fontSize:"20px",fontWeight:"bold" ,marginTop:"20px",marginLeft:"10%",paddingBottom:"10px"}}>We've got you covered</h1>
+           <h1 style={{fontSize:"20px",fontWeight:"bold" ,marginTop:"20px",marginLeft:"10%",paddingBottom:"10px"}}>We've got you covered</h1>
            <Grid w="80%" margin={"auto"} 
                     templateColumns={{lg:"repeat(3,1fr)",md:"repeat(2,1fr)",sm:"1fr"}}
                     gap={7}>
@@ -65,13 +83,14 @@ export default function NearByDestination() {
                     </Stack>
                 </HStack>
               </Box>
-           </Grid> */}
-           {/* <br /><br />
+           </Grid>
+           <br /><br />
            <hr className="hr"/>  <br />
            <h1 style={{fontSize:"20px",fontWeight:"bold",marginLeft:"10%"}}>Explore more destinations</h1>
            <p style={{marginLeft:"10%",paddingTop:"1px"}}>Find things to do in cities around the world</p>
-           <br /> */}
-           {/* <Tabs width={'80%'} marginLeft="10%">
+           <br />
+           {/* overflowX="scroll" */}
+           <Tabs width={'80%'} marginLeft="10%">
                 <TabList>
                     <Tab>Europe</Tab>
                     <Tab>North America</Tab>
@@ -95,8 +114,7 @@ export default function NearByDestination() {
                     <TabPanel><CentralAmerica/></TabPanel>
                 </TabPanels>
             </Tabs>
-                         */}
-           
+                                  
         </>
     )
 }

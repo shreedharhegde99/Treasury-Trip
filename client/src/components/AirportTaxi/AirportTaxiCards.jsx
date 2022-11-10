@@ -1,5 +1,4 @@
-import { Box, Button, Heading, HStack, Text } from "@chakra-ui/react";
-import { Fragment } from "react";
+import { Box, Button, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { BsFillPersonFill, BsCheck } from "react-icons/bs";
 import { HiOutlineCheckCircle } from "react-icons/hi";
 import { FaSuitcase } from "react-icons/fa";
@@ -13,43 +12,43 @@ export default function AirportTaxiCards({
   cancellation,
 }) {
   return (
-    <Fragment>
-      <Box p="4" border="1px" borderColor="black" w="max-content">
-        <Box>
-          <Heading as="h2" size="sm">
-            {type}
-          </Heading>
-          <Text>{vehicle}</Text>
-        </Box>
-        <Box>
-          <HStack>
-            <Box>
-              <BsFillPersonFill />
-            </Box>
-            <Box>{passengers}</Box>
-          </HStack>
-
-          <HStack>
-            <Box>
-              <FaSuitcase />
-            </Box>
-            <Box>{bags}</Box>
-          </HStack>
-          <HStack>
-            <Box>
-              <HiOutlineCheckCircle />
-            </Box>
-            <Box>{included}</Box>
-          </HStack>
-          <HStack>
-            <Box>
-              <BsCheck />
-            </Box>
-            <Box>{cancellation}</Box>
-          </HStack>
-          <Button variant="solid" colorScheme="telegram" w="16" h="8">Search</Button>
-        </Box>
+    <Box p="4" border="1px" borderColor="black" minW="xs">
+      <Box py="4">
+        <Heading as="h2" size="sm">
+          {type}
+        </Heading>
+        <Text fontSize="sm">{vehicle}</Text>
       </Box>
-    </Fragment>
+      <VStack align="start"  p="2">
+        <HStack>
+          <Box>
+            <BsFillPersonFill size="1rem" />
+          </Box>
+          <Box>{passengers}</Box>
+        </HStack>
+
+        <HStack>
+          <Box>
+            <FaSuitcase size="1rem" />
+          </Box>
+          <Box>{bags}</Box>
+        </HStack>
+        <HStack>
+          <Box>
+            <HiOutlineCheckCircle size="1rem" color="#4299e1" />
+          </Box>
+          <Box color="blue.400">{included}</Box>
+        </HStack>
+        <HStack>
+          <Box>
+            <BsCheck size="1rem" color="#008000" />
+          </Box>
+          <Box color="green">{cancellation}</Box>
+        </HStack>
+      </VStack>
+      <Button variant="solid" colorScheme="telegram" w="16" h="8">
+        Search
+      </Button>
+    </Box>
   );
 }
