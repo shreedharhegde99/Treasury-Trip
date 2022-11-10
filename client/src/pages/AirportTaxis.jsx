@@ -24,7 +24,7 @@ import {
 import { Fragment, useState } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { BsPersonFill } from "react-icons/bs";
+import { BsPersonFill, BsInfoCircle } from "react-icons/bs";
 import { GoCheck } from "react-icons/go";
 import { GrCreditCard } from "react-icons/gr";
 import { RiPlaneFill } from "react-icons/ri";
@@ -44,12 +44,15 @@ export default function AirportTaxi() {
   const [passengers, setPassengers] = useState(1);
   return (
     <Fragment>
-      <Box p="4">
+      <Box p="4" maxW="container.lg" m="auto">
         <Accordion allowMultiple>
           <AccordionItem>
             <AccordionButton w="full">
               <Flex w="full" justify="space-between">
-                <Text>Protecting you during COVID-19</Text>
+                <Stack direction="row" align="center">
+                  <BsInfoCircle color="red"/>
+                  <Text>Protecting you during COVID-19</Text>
+                </Stack>
                 <AccordionIcon />
               </Flex>
             </AccordionButton>
@@ -67,7 +70,7 @@ export default function AirportTaxi() {
         </Accordion>
       </Box>
       {/* Taxi search section */}
-      <Box p="4">
+      <Box p="4" maxW="container.lg" m="auto">
         <Box>
           <Heading as="h2" size="md" p="2">
             Book your airport taxi
@@ -89,9 +92,11 @@ export default function AirportTaxi() {
         templateColumns={{
           base: "1fr",
           md: "repeat(2,1fr)",
-          lg: "repeat(5,1fr)",
+          lg: "repeat(3,1fr) 2fr 1fr",
         }}
         p="4"
+        maxW="container.lg"
+        m="auto"
       >
         <GridItem
           w="full"
@@ -182,7 +187,7 @@ export default function AirportTaxi() {
           colSpan={{ sm: "2", lg: "1" }}
         >
           <Button
-            w={{ base: "full", md: "xs" }}
+            w={{ base: "full", md: "xs", lg: "40" }}
             variant="solid"
             colorScheme="telegram"
             h={{ base: "10", lg: "full" }}
@@ -194,10 +199,12 @@ export default function AirportTaxi() {
       {/* Details section */}
 
       <Stack
-        p="4"
+        p={{ base: "4", lg: "10" }}
         direction={{ base: "column", lg: "row" }}
         spacing="6"
         justify={{ md: "center" }}
+        maxW="container.lg"
+        m="auto"
       >
         <HStack align="start" spacing="6">
           <Box borderRadius={"50%"} bgColor="blue.50" p="2">
@@ -240,7 +247,7 @@ export default function AirportTaxi() {
       </Stack>
 
       {/*    Airport transfers made easy*/}
-      <VStack justify={{ md: "center" }} py="20">
+      <VStack justify={{ md: "center" }} py="20" maxW="container.lg" m="auto">
         <Box p="4">
           <Heading as="h3" size={{ base: "sm", md: "lg" }} py="10">
             Airport transfers made easy
