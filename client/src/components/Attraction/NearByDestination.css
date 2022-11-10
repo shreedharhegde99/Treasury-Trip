@@ -1,0 +1,96 @@
+.hr{
+  width: 85%;
+  margin: auto;
+}
+.tree{
+  margin-top: -25px;
+  color: green;
+  margin-right: 5px;
+}
+.container_san{
+  border-radius: 10px;
+  height:auto;
+  overflow:hidden;
+}
+.container_san img{
+  width: 100%;
+  display: block;
+  transition:transform 1s
+}
+.container_san:hover img{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+/* .image_Text{
+  height:"auto";
+  border-radius: 10px;
+
+} */
+/* .image_Text:hover{
+  cursor: pointer; 
+  transform: scale(1.1);
+  border-radius:10%;
+} */
+.text{
+  position:absolute;
+  z-index:2;
+  color:white;
+  margin-left:2%;
+  font-weight:500;
+  margin-top:-4.5%;
+}
+.text2{
+ position:absolute;
+ z-index:2;
+ color:white;
+ margin-left:2%;
+ font-weight:500;
+ margin-top:-3%;
+}
+
+
+
+
+
+/* On screens that are 992px or less;
+ set the background color to blue */
+@media screen and (max-width: 992px) {
+  .text{
+    margin-left:3%;
+    margin-top:-5.5%;
+    font-size: small;
+  }
+  .text2{
+    margin-left:3%;
+    margin-top:-3.5%;
+    font-size: small;
+   }
+   
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .text{
+    margin-left:3%;
+    margin-top:-9.5%;
+    font-size: small;
+  }
+  .text2{
+    margin-left:3%;
+    margin-top:-6%;
+    font-size: small;
+   }
+}
+
+@media screen and (max-width: 300px) {
+  .text{
+    margin-left:3%;
+    margin-top:-16.5%;
+    font-size: small;
+  }
+  .text2{
+    margin-left:3%;
+    margin-top:-10%;
+    font-size: small;
+   }
+}

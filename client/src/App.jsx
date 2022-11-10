@@ -4,8 +4,9 @@ import { NavbarTop } from "./components/NavbarTop";
 
 function App() {
   return <div>
-    <NavbarTop/>
-    Treasure Trip</div>
+    <NavbarTop />
+    <AllRoutes />
+  </div>;
 }
 
 export default App;
