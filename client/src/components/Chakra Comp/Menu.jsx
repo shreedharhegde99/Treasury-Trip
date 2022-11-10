@@ -10,7 +10,7 @@ import {
   Button,
   Box,
 } from "@chakra-ui/react";
-import {EditIcon, HamburgerIcon,UnlockIcon} from "@chakra-ui/icons";
+import {EditIcon, HamburgerIcon, UnlockIcon} from "@chakra-ui/icons";
 import {Link} from "react-router-dom";
 import {IoIosBed} from "react-icons/io";
 import {MdFlightTakeoff} from "react-icons/md";
@@ -32,16 +32,21 @@ const MenuBar = () => {
       <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent color={"white"} bg="teal.700">
-          <DrawerHeader display={"flex"} gap="30px" borderBottomWidth="3px">
-            Treasure Trip
-            <Button bg={"teal.700"} color={"white"} outlineColor={"white"}>
-              <UnlockIcon color={"white"} mr={2} />
-              Login
-            </Button>
-            <Button color={"white"} bg={"teal.700"} outlineColor={"white"}>
-              <EditIcon color={"white"} mr={2} />
-              Register
-            </Button>
+          <DrawerHeader display={"flex"} gap="20px" borderBottomWidth="3px">
+            Treasury Trip
+            <Link to="login">
+              {" "}
+              <Button bg={"teal.700"} color={"white"} outlineColor={"white"}>
+                <UnlockIcon color={"white"} mr={2} />
+                Login
+              </Button>
+            </Link>
+            <Link to="register">
+              <Button color={"white"} bg={"teal.700"} outlineColor={"white"}>
+                <EditIcon color={"white"} mr={2} />
+                Register
+              </Button>
+            </Link>
           </DrawerHeader>
           <DrawerBody p={3} display={"flex"} justifyContent="space-between">
             <Link to="/stays">

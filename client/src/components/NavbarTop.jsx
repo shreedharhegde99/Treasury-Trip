@@ -29,15 +29,17 @@ export const NavbarTop = () => {
         </Box>
         <Box
           alignItems={"center"}
-          w={["70%", "70%", "70%", "45%"]}
+          w={["70%", "70%", "70%", "40%"]}
           display="flex"
+          justifyContent={"center"}
+          // border="1px solid red"
           gap={[6, 10, 25]}
         >
           <Box
             display="flex"
             justifyContent={"space-around"}
             w={["100%", "30%", "40%", "20%"]}
-            mr={["50px", "50px", "10px", "30px"]}
+            // border="1px solid"
             alignItems="center"
           >
             <Text fontSize={["sm", "md"]}>INR</Text>
