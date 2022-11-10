@@ -22,8 +22,9 @@ const NavbarR = () => {
             <Box
               display={"flex"}
               alignItems="center"
-              //   _focus={{border: "2px solid"}}
-              //   _active={{border: "2px solid"}}
+              
+              //   _focus={{color: "2px solid"}}
+                _active={{border: "2px solid"}}
               //   _highlighted={{border: "2px solid"}}
               //   _expanded={{border: "2px solid"}}
             //   _checked={{border: "2px solid"}}
