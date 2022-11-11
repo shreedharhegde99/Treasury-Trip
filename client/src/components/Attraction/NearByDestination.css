@@ -15,7 +15,8 @@
 .container_san img{
   width: 100%;
   display: block;
-  transition:transform 1s
+  transition:transform 1s;
+  opacity: 100%;
 }
 .container_san:hover img{
   transform: scale(1.1);
@@ -35,17 +36,19 @@
   position:absolute;
   z-index:2;
   color:white;
-  margin-left:2%;
+  margin-left:1.5%;
   font-weight:500;
   margin-top:-4.5%;
+  opacity: 250%;
 }
 .text2{
  position:absolute;
  z-index:2;
  color:white;
- margin-left:2%;
+ margin-left:1.5%;
  font-weight:500;
  margin-top:-3%;
+ opacity: 250%;
 }
 
 
