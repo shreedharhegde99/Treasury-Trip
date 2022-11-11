@@ -8,7 +8,6 @@ import {
   Input,
   Show,
   Stack,
-  TagLabel,
   Text,
 } from "@chakra-ui/react";
 
