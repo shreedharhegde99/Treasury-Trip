@@ -5,11 +5,11 @@ import { useEffect } from "react";
 
 const baseUrl=`https://treasury-trip.up.railway.app`
 
-export default function Europe(){
+export default function Caribbean(){
     const [data,setData]=useState([])
     const getData=async()=>{
         try {
-            let response=await axios.get(`${baseUrl}/attractions?country=europe`)
+            let response=await axios.get(`${baseUrl}/attractions?country=caribbean`)
             setData(response.data)
             console.log(response.data)
             
@@ -29,13 +29,15 @@ export default function Europe(){
                 gap={4}>
 
                     {
-                        data.map((el)=> <div key={el._id}>
+                        data.map((el)=> 
+                        <div key={el._id}>
                             <div className="container_san"> 
                             <img src={el.image} alt={el.places} />
                             <p className="text">{el.places}</p>
                             <p className="text2">{el.todo}</p>
                              </div>
-                        </div>)
+                        </div>
+                        )
                     }
                 
             </Grid>
