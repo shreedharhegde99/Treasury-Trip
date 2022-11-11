@@ -34,7 +34,7 @@ const Flag = () => {
         <MenuButton
           // border="4px solid"
           bg={"transparent"}
-          w={["40%", "40%", "40%", "50%"]}
+          w={["40%", "40%", "30%", "50%"]}
           fontWeight={"bolder"}
           _expanded={{bg: "transparent"}}
           // _focus={{bg:"black"}}

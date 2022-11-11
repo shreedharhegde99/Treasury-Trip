@@ -5,10 +5,10 @@ import {useNavigate} from "react-router-dom";
 const NotFound = () => {
   const navigate = useNavigate();
 
-  setTimeout(() => {
-    navigate("/stays");
-    console.log("Redirecting.....");
-  }, 3000);
+  // setTimeout(() => {
+  //   navigate("/stays");
+  //   console.log("Redirecting.....");
+  // }, 3000);
 
   return (
     <Box>
