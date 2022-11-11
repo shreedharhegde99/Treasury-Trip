@@ -1,8 +1,12 @@
 const mongoose = require("mongoose");
 const citySchema = new mongoose.Schema(
   {
-    country: String,
-    data: [{ image: String, place: String, todo: String }],
+    image: String,
+    city: String,
+    title: String,
+    desc: String,
+    price: String,
+    cancellation: String,
   },
   {
     versionKey: false,
