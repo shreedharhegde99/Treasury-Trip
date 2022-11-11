@@ -7,7 +7,6 @@ import { Feature } from "../components/Flights/Feature";
 import { Flyword } from "../components/Flights/Flyword";
 import { Popularflight } from "../components/Flights/Popularflight";
 import { Trendingflight } from "../components/Flights/Trendingflight";
-import NavbarR from "../components/NavbarR";
 export const Flights=()=>{
     return(
         <Container maxW={"100vw"}  overflow="hidden" minW={"100vw"} bgColor="rgb(242,242,242)" pt="10px">

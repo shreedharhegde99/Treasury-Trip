@@ -1,9 +1,9 @@
 import {Box, Heading, Image} from "@chakra-ui/react";
-import React, {useEffect} from "react";
-import {useNavigate} from "react-router-dom";
+import React from "react";
+// import {useNavigate} from "react-router-dom";
 
 const NotFound = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // setTimeout(() => {
   //   navigate("/stays");
