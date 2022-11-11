@@ -1,4 +1,4 @@
-const Attraction = require("./attractions.model");
+const Attraction = require("./country/attractions.model");
 
 const express = require("express");
 const app = express.Router();
@@ -10,7 +10,7 @@ app.get("/", async (req, res) => {
   if(country){
 
     const countryData = await Attraction.findOne({ country: country });
-    console.log(countryData.data);
+    // console.log(countryData.data);
     res.send(countryData.data);
     return ;
   }
