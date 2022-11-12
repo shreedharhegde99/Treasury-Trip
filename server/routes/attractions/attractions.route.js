@@ -1,5 +1,6 @@
 const Attraction = require("./country/attractions.model");
 const City = require("./cities/cities.model");
+const Attraction = require("./attractions.model");
 
 const express = require("express");
 const app = express.Router();
@@ -42,6 +43,6 @@ app.get("/:cityName", async (req, res) => {
   } else {
     res.status(404).send({ message: "Data for this city is not available" });
   }
-});
+ 
 
 module.exports = app;

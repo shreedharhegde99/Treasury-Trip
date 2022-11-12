@@ -5,10 +5,12 @@ import SubscribeLetter from "../components/AirportTaxi/SubscribeLetter";
 import BookYourTaxi from "../components/AirportTaxi/BookYourTaxi";
 import AirportTransferDetail from "../components/AirportTaxi/AirportTransferDetail";
 import AirportTaxiKinds from "../components/AirportTaxi/AirportTaxiKinds";
+import NavbarR from "../components/Navbar/NavbarR";
 
 export default function AirportTaxi() {
   return (
     <Fragment>
+      <NavbarR />
       <BookYourTaxi />
       <AirportTransferDetail />
       <AirportTaxiKinds />

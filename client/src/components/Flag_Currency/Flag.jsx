@@ -18,7 +18,7 @@ const Flag = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res);
-        console.log(res);
+        // console.log(res);
       })
 
       .catch((err) => console.log(err.message));
@@ -34,7 +34,7 @@ const Flag = () => {
         <MenuButton
           // border="4px solid"
           bg={"transparent"}
-          w={["40%", "40%", "30%", "45%"]}
+          w={["40%", "40%", "30%", "50%"]}
           fontWeight={"bolder"}
           _expanded={{bg: "transparent"}}
           // _focus={{bg:"black"}}
@@ -55,8 +55,8 @@ const Flag = () => {
         <MenuList
           bg={"teal"}
           zIndex={"overlay"}
-          h={[40, 60, "full", "270"]}
-          overflow={["scroll", "scroll", "scroll"]}
+          h={[40, 60, "80", "270"]}
+          overflow={["scroll"]}
           w={["full"]}
         >
           <SimpleGrid
@@ -68,18 +68,19 @@ const Flag = () => {
             rowGap={1}
             columnGap={[1, 3]}
           >
-            {data.slice(34, 62).map((el, i) => {
+            {data.slice(20, 80).map((el, i) => {
               return (
                 <MenuItem
                   zIndex={"20"}
                   key={i}
                   onClick={() => setNAme(el.flag)}
+                  w={"fit-content"}
                   _expanded={{bg: "transparent"}}
                   _focus={{bg: "transparent"}}
                   _hover={{bg: "transparent"}}
                 >
                   <Image w={5} mr={1} src={el.flag} />
-                  {el.name}
+                  {el.name.slice(0, 10)}
                 </MenuItem>
               );
             })}

@@ -5,11 +5,11 @@ import { useEffect } from "react";
 
 const baseUrl=`https://treasury-trip.up.railway.app`
 
-export default function SouthAmerica(){
+export default function Oceania(){
     const [data,setData]=useState([])
     const getData=async()=>{
         try {
-            let response=await axios.get(`${baseUrl}/attractions?country=southamerica`)
+            let response=await axios.get(`${baseUrl}/attractions?country=oceania`)
             setData(response.data)
             // console.log(response.data)
             
