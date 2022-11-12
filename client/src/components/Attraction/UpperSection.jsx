@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from "react-redux"
 // import axios from 'axios';
 // import { useEffect } from 'react';
 import { getCityData } from '../../redux/attractions/attractions.action';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // const baseUrl=`https://treasury-trip.up.railway.app`
 
@@ -45,7 +45,7 @@ export default function UpperSection() {
                     />
                         <Input onChange={handleChange} border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  p="25px" pl="40px" placeholder='Where are you going'/>
                     </InputGroup>                   
-                      <Input border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" placeholder='Select your dates' type="date" p="25px" pl="40px"/>                   
+                      <Input onChange={handleChange}  border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" placeholder='Select your dates' type="date" p="25px" pl="40px"/>                   
                    <Button onClick={handleSearch} border="4px" borderColor={"orange"} bg="#006CE4" color="white" p="25px 40px 25px 40px">Search</Button>
                  </HStack>
            </Box>

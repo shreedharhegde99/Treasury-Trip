@@ -2,10 +2,12 @@ import { Grid } from "@chakra-ui/react";
 import axios from "axios"
 import { useState } from "react";
 import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
 const baseUrl=`https://treasury-trip.up.railway.app`
 
 export default function Africa(){
+    
     const [data,setData]=useState([])
     const getData=async()=>{
         try {
@@ -17,6 +19,10 @@ export default function Africa(){
             console.log(error);
         }
         
+    }
+    const nextPage=()=>{
+        <Navigate to = '/attractionscity'/>
+        console.log("moved to attractioncity");
     }
     useEffect(()=>{
         getData()
@@ -30,8 +36,8 @@ export default function Africa(){
 
                     {
                         data.map((el)=> 
-                        <div key={el._id}>
-                            <div className="container_san"> 
+                        <div onClick={nextPage} key={el._id}>
+                            <div  className="container_san"> 
                             <img src={el.image} alt={el.place} />
                             <p className="text">{el.place}</p>
                             <p className="text2">{el.todo}</p>
