@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarR from "../components/NavbarR";
+import NavbarR from "../components/Navbar/NavbarR";
 
 const Stays = () => {
   return (
