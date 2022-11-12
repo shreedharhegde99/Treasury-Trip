@@ -50,6 +50,11 @@
  margin-top:-3%;
  opacity: 250%;
 }
+.hidden{
+    /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  overflow-x: scroll;
+}
 
 
 
