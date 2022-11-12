@@ -1,16 +1,11 @@
-import {Box, Grid, GridItem, Image, Text} from "@chakra-ui/react";
+import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import shivam from "../../assets/shivam.jpg";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 const FooterDwn = () => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
-  if (
-    pathname === "/stays/carRentals" ||
-    "/taxis/carRentals" ||
-    "/attractions/carRentals" ||
-    "/flights/carRentals"
-  ) {
+  if (pathname === "/car-rentals") {
     return null;
   } else {
     return (
