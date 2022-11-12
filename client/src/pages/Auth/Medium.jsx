@@ -6,9 +6,7 @@ const Medium = () => {
     <>
       <Box>
         <Box>
-          <Text as={"sup"}>
-            or use one of these options
-          </Text>
+          <Text as={"sup"}>or use one of these options</Text>
         </Box>
         <Box w={"50%"} m="auto" display={"flex"} justifyContent="center">
           <HStack spacing="24px">
@@ -41,6 +39,22 @@ const Medium = () => {
         <Text mt={4} p={3} borderBottomWidth="3px" fontWeight={500}>
           more ways to sign-in
         </Text>
+        <Box
+          w={"80%"}
+          m="auto"
+          fontSize={13}
+          p={"30px 0"}
+          borderBottomWidth="3px"
+        >
+          <Text>
+            By signing in or creating an account, you agree with our Terms &
+            Conditions and Privacy Statement
+          </Text>
+        </Box>
+        <Box w={"70%"} m="auto" fontSize={13}>
+          <Text>All rights reserved.</Text>
+          <Text> Copyright (2006-2022) – Treasury Trip.com™</Text>
+        </Box>
       </Box>
     </>
   );

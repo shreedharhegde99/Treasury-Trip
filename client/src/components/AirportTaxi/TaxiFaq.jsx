@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Flex,
   Heading,
   Highlight,
   Stack,
