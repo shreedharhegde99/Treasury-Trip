@@ -18,4 +18,20 @@ app.get("/", async (req, res) => {
   }
 });
 
+/* get the flight details by id */
+
+app.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  const flightData = await Flight.findOne({ _id: id });
+
+  if (flightData?.from) {
+    res.status(200).send(flightData);
+    return;
+  } else {
+    res.status(404).send({ message: "Flights not found for requested id" });
+    return;
+  }
+});
+
 module.exports = app;
