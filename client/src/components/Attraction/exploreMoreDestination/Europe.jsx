@@ -11,7 +11,7 @@ export default function Europe(){
         try {
             let response=await axios.get(`${baseUrl}/attractions?country=europe`)
             setData(response.data)
-            console.log(response.data)
+            // console.log(response.data)
             
         } catch (error) {
             console.log(error);
