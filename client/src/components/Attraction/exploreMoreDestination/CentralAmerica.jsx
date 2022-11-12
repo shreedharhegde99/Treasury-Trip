@@ -2,10 +2,15 @@ import { Grid } from "@chakra-ui/react";
 import axios from "axios"
 import { useState } from "react";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { getCityData, loaded } from "../../../redux/attractions/attractions.action";
 
 const baseUrl=`https://treasury-trip.up.railway.app`
 
 export default function CentralAmerica(){
+    const dispatch=useDispatch()
+    const {dataLoaded}=useSelector(state=>state.attraction)
     const [data,setData]=useState([])
     const getData=async()=>{
         try {
@@ -17,9 +22,16 @@ export default function CentralAmerica(){
             console.log(error);
         }    
     }
+    const nextPage=()=>{
+        dispatch(getCityData("bangalore"));
+    }
     useEffect(()=>{
         getData()
+        dispatch(loaded(false))
     },[])
+    if(dataLoaded){
+        return <Navigate to = '/attractionscity'/>
+    }
     return (
   
         <Grid  h='auto' w="102%" ml='-4'
@@ -29,7 +41,7 @@ export default function CentralAmerica(){
 
                     {
                         data.map((el)=> 
-                        <div key={el._id}>
+                        <div onClick={nextPage} key={el._id}>
                             <div className="container_san"> 
                             <img src={el.image} alt={el.places} />
                             <p className="text">{el.places}</p>
