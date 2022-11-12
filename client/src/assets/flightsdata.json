@@ -1,0 +1,53 @@
+{
+    "delhitobanglore":[
+        {
+            "airport":"Delhi international Airport","airport2":"Kempegowda international Airport",
+            "duration":{"hours":2,"minute":1},
+            "departs":"8:45 PM",
+            "arrive":"10:46 PM",
+            "airline":"Air India",
+            "loc1":"DEL",
+            "loc2":"BLR",
+            "prc":"INR 11,580",
+            "id":"1"
+        },
+        {
+            "airport":"Delhi international Airport","airport2":"Kempegowda international Airport",
+            "duration":{"hours":2,"minute":15},
+            "departs":"8:45 PM",
+            "arrive":"10:54 PM",
+            "airline":"IndiGo",
+            "loc1":"DEL",
+            "loc2":"BLR",
+            "prc":"INR 10,580",
+            "id":"2"
+        },
+        {
+            "airport":"Delhi international Airport","airport2":"Kempegowda international Airport",
+            "duration":{"hours":3,"minute":15},
+            "departs":"8:45 PM",
+            "arrive":"11:54 PM",
+            "airline":"Vistara",
+            "loc1":"DEL",
+            "loc2":"BLR",
+            "prc":"INR 13,580",
+            "id":"3"
+        },
+        {
+            "airport":"Delhi international Airport","airport2":"Kempegowda international Airport",
+            "duration":{"hours":1,"minute":40},
+            "departs":"8:10 PM",
+            "arrive":"9:50 PM",
+            "airline":"Father's Airways",
+            "loc1":"DEL",
+            "loc2":"BLR",
+            "prc":"INR 250"
+            ,
+            "id":"4"
+        }
+
+    ],
+    "delhitomumbai":[
+        {}
+    ]
+}

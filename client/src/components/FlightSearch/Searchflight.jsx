@@ -1,15 +1,11 @@
 import { Button, Checkbox, Container, Heading, HStack, Input, InputGroup, InputLeftAddon, Radio, RadioGroup, Select, Stack ,Text} from "@chakra-ui/react";
 import React from "react";
 
-export const BookFlight = () => {
+export const Searchflight = () => {
     const [value, setValue] = React.useState('1')
     return (
         <Container bgColor={"white"} borderRadius="10px" minW={"100%"} textAlign="left" p="20px" mb={"40px"}>
-            <Heading as='h3' size='lg' mt={"10px"}>
-                Compare and book flights with ease
-            </Heading>
-            <Text mt="20px" >Discover your next dream destination
-</Text>
+     
             <RadioGroup onChange={setValue} value={value} mt="30px">
                 <Stack mt={"10px"} direction={{base:"column",md:"row"}} gap="20px">
                     <HStack justifyContent={"space-evenly"}>

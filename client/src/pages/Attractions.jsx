@@ -1,15 +1,13 @@
 import React from "react";
-// import ListLanding from "../components/Attraction/ListLanding";
-import AttractionsPage from "./AttractionPage"
-import NavbarR from "../components/NavbarR";
+import AttractionsPage from "./AttractionPage";
+import NavbarR from "../components/Navbar/NavbarR";
 
 const Attractions = () => {
   return (
     <div>
       <NavbarR />
-      <AttractionsPage/>
+      <AttractionsPage />
       {/* <ListLanding/> */}
-    
     </div>
   );
 };
