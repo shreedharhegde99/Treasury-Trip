@@ -9,14 +9,13 @@ export default function CentralAmerica(){
     const [data,setData]=useState([])
     const getData=async()=>{
         try {
-            let response=await axios.get(`${baseUrl}/attractions?country=central america`)
+            let response=await axios.get(`${baseUrl}/attractions?country=centralamerica`)
             setData(response.data)
-            console.log(response.data)
+            // console.log(response.data)
             
         } catch (error) {
             console.log(error);
-        }
-        
+        }    
     }
     useEffect(()=>{
         getData()
