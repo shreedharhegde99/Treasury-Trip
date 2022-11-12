@@ -3,8 +3,12 @@ import React from "react";
 
 export const Searchflight = () => {
     const [value, setValue] = React.useState('1')
+    const[arrive,setarrive]=React.useState("")
+    const[depart,setdepart]=React.useState("")
+    const[date,setdate]=React.useState("")
+   
     return (
-        <Container bgColor={"white"} borderRadius="10px" minW={"100%"} textAlign="left" p="20px" mb={"40px"}>
+        <Container border="2px" borderBottomColor={"silver"} borderRightColor="silver" borderLeftColor="silver"  borderTopColor="silver" bgColor={"#f9f9f9"}borderRadius="10px" minW={"100%"} textAlign="left" p="20px" mb={"40px"}>
      
             <RadioGroup onChange={setValue} value={value} mt="30px">
                 <Stack mt={"10px"} direction={{base:"column",md:"row"}} gap="20px">
@@ -30,7 +34,7 @@ export const Searchflight = () => {
                </HStack>
                 </Stack>
 
-                <Stack  shadow={"lg"} direction={{base:"column",md:"row"}} mt="20px" borderRadius={"5px"} bgColor={"rgb(0,136,204)"} p="10px">
+                <Stack border={"2px"} borderColor="white" shadow={"lg"} direction={{base:"column",md:"row"}} mt="20px" borderRadius={"5px"} bgColor={"rgb(0,136,204)"} p="10px">
                     <InputGroup bgColor={"white"}  borderRadius="10px">
                         <InputLeftAddon  minH={"50px"}  children='✈' />
                         <Input minH={"50px"} type='text' placeholder='where from?' />

@@ -2,23 +2,26 @@ import { Container, HStack,Stack, Text, VStack ,Image, Heading, Button,} from "@
 import React from "react"
 import flightitem from "../../assets/flightitem.jpg"
 import airindia from "../../assets/airindia.jpg"
+import { useNavigate } from "react-router-dom"
 
 export const SearchCard=(props)=>{
-    const {arrive,departs,loc1,loc2,prc,id,duration,airline} = props.data
+    const {arrive,departure,loc1,loc2,prc,_id,duration,airline} = props.data
     const date=new Date()
     const today=date.getDate()
+
+    let navigate=useNavigate()
     return(
-       <Stack direction={{base:"column",md:"row"}} alignContent="center" alignItems="center" p={"10px"} border="1px" borderColor={"silver"}  boxShadow='base' borderRadius="20px" justifyContent={"space-evenly"} minW={{base:"90%",md:"650px"}} maxW={{base:"90%",md:"650px"}}>
+       <Stack bgColor={"#f9f9f9"} key={_id} direction={{base:"column",md:"row"}} alignContent="center" alignItems="center" p={"10px"} border="1px" borderColor={"silver"}  boxShadow='base' borderRadius="20px" justifyContent={"space-evenly"} minW={{base:"90%",md:"690px"}} maxW={{base:"90%",md:"690px"}}>
         <VStack>
             <Image src={airindia}/>
             <Text>{airline}</Text>
         </VStack>
         <VStack>
-            <Text>{departs}</Text>
+            <Text>{departure}</Text>
             <Text>{loc1+"-" +today +" "+"Nov"}</Text>
         </VStack>
         <VStack>
-            <Text>{duration.hours +"H " + duration.minute+" M"}</Text>
+            <Text>{duration}</Text>
             <Text borderColor={"blackAlpha.300"} borderTop={"2px"}>Direct</Text>
         </VStack>
         <VStack>
@@ -32,7 +35,7 @@ export const SearchCard=(props)=>{
                     <Image src={flightitem} mr="-20px" />
                     <Heading fontSize={"20px"} minW="100%" textAlign={{base:"center",md:"right"}}>{prc}</Heading>
                     <Text minW="100%" textAlign={{base:"center",md:"right"}}>Total price for all travelers</Text>
-                    <Button  variant='outline' colorScheme={"blue"} minW={"100%"}>Select Flight</Button>
+                    <Button  onClick={()=>{navigate("/flights/book")}} colorScheme={"telegram"} minW={"100%"}>Select Flight</Button>
             </VStack>
        </Stack>
 
