@@ -7,23 +7,29 @@ import "./ListLanding.css"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCityData } from "../../redux/attractions/attractions.action"
+import NavbarR from "../NavbarR"
 export default function ListLanding(){
     const {cityData}=useSelector(state=>state.attraction)
     const [data,setData]=useState(cityData)
+    const [citySearch,setCitySearch]=useState('ahmedabad')
     // const [text,setText]=useState('')
 
     const dispatch=useDispatch()
     // console.log(dataLoaded);
-
     
-    const handleSearch=()=>{
-        dispatch(getCityData('bangalore'))
+    const handleSearch=(city)=>{
+        dispatch(getCityData(city))
+        uppercase()
         // setData(cityData)
          console.log("inside handle search");
      }
+     const uppercase=()=>{
+        let city=citySearch[0].toUpperCase()+citySearch.slice(1)
+        setCitySearch(city)
+     }
 
     useEffect(()=>{
-        handleSearch()
+        handleSearch(citySearch)
     },[])
 
     useEffect(()=>{
@@ -59,17 +65,18 @@ export default function ListLanding(){
 
     return (
        <Box>
-          <Box ml={'10%'} pt={'5%'} style={{fontWeight:'bold',fontSize:'25px'}}>Bangalore Attractions</Box>
+        <NavbarR/>
+          <Box ml={'10%'} pt={'3%'} style={{fontWeight:'bold',fontSize:'25px'}}>{citySearch} Attractions</Box>
          <HStack align={'start'}>  
             {/* Left-Box */}
             <Box mt={'20px'} ml={'10%'} mr={'5%'} w="28%">
                 <Box border="4px" borderColor={"orange"} borderRadius={'10px'}>
                     <InputGroup>
                         <InputLeftElement><FiSearch/></InputLeftElement>
-                        <Input  placeholder="Museum, tours,activities..."/>
+                        <Input value={citySearch} onChange={(e)=>setCitySearch(e.target.value)} placeholder="Museum, tours,activities..."/>
                     </InputGroup>
                     <Input type="date"/>
-                    <Button  border="2px" borderColor={"orange"} color="white" bg={'#006CE4'} pl={'42.5%'} pr={'42.5%'}>Search</Button>
+                    <Button onClick={()=>handleSearch(citySearch)} border="2px" borderColor={"orange"} color="white" bg={'#006CE4'} pl={'42.5%'} pr={'42.5%'}>Search</Button>
                 </Box><br />
 
                 <Box border={'1px solid lightgrey'} h='auto' borderRadius={'10px'} pl="5%">
@@ -127,7 +134,7 @@ export default function ListLanding(){
                                                     <Image w='100%' borderRadius={'10px'} src={el.image} loading="lazy"/>
                                                 </Box>
                                                 <Box mt={'-20'} w='70%'>
-                                                    <p style={{color:'#1A1A1A',fontSize:'14px',marginTop:'5px'}}>{el.city}</p>
+                                                    <p style={{color:'#1A1A1A',fontSize:'14px',marginTop:'5px'}}>{el.city.toUpperCase()}</p>
                                                     <h1 style={{fontWeight:'bold',fontSize:'20px'}}>{el.title}</h1>
                                                     <p style={{color:'#1A1A1A',fontSize:'14px',marginBottom:'15px'}}>{el.desc}</p>
                                                     {/* <Box style={{color:'#1A1A1A',fontSize:'14px',marginBottom:'2px'}}><HStack><MdTimer/>{el.duration}?<p>Duration 2 hours</p>:''</HStack></Box> */}

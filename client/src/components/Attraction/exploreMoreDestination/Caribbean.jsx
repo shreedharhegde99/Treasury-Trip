@@ -2,11 +2,15 @@ import { Grid } from "@chakra-ui/react";
 import axios from "axios"
 import { useState } from "react";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { getCityData, loaded } from "../../../redux/attractions/attractions.action";
 
 const baseUrl=`https://treasury-trip.up.railway.app`
 
 export default function Caribbean(){
+    const dispatch=useDispatch()
+    const {dataLoaded}=useSelector(state=>state.attraction)
     const [data,setData]=useState([])
     const getData=async()=>{
         try {
@@ -16,16 +20,17 @@ export default function Caribbean(){
             
         } catch (error) {
             console.log(error);
-        }
-        
+        }    
+    }
+    const nextPage=()=>{
+        dispatch(getCityData("bangalore"));
     }
     useEffect(()=>{
         getData()
+        dispatch(loaded(false))
     },[])
-
-    const nextPage=()=>{
-        <Navigate to = '/attractionscity'/>
-        console.log("moved to attractioncity");
+    if(dataLoaded){
+        return <Navigate to = '/attractionscity'/>
     }
     return (
   
