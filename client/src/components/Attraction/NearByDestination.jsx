@@ -49,7 +49,7 @@ export default function NearByDestination() {
            </Box> <br /><br /><br /><br /><br /><br /><br />
            <div style={{borderRadius:"10px",border:"1px solid lightgrey",width:"80%",height:"120px",margin:"auto",marginTop:"-120px",marginBottom:"10px"}}> 
             <h1  style={{fontSize:"16px",fontWeight:"bold",marginLeft:"2%",marginTop:"10px"}}>Sign in to save time</h1>
-            <p style={{marginLeft:"2%",paddingTop:"5px"}}>Your Booking.com account lets you book using your saved details <br /><br /><Link to="/signIn"><span style={{color:"#4F6CE8",cursor:"pointer",marginLeft:".1%"}}>Sign in</span></Link></p>
+            <p style={{marginLeft:"2%",paddingTop:"5px"}}>Your Booking.com account lets you book using your saved details <br /><br /><Link to="/login"><span style={{color:"#4F6CE8",cursor:"pointer",marginLeft:".1%"}}>Sign in</span></Link></p>
            </div><br />
            <hr className="hr"/>          
            <h1 style={{fontSize:"20px",fontWeight:"bold" ,marginTop:"20px",marginLeft:"10%",paddingBottom:"10px"}}>We've got you covered</h1>
@@ -90,7 +90,7 @@ export default function NearByDestination() {
            <p style={{marginLeft:"10%",paddingTop:"1px"}}>Find things to do in cities around the world</p>
            <br />
            {/* overflowX="scroll" */}
-           <Tabs overflow="scroll" width={'80%'} marginLeft="10%">
+           <Tabs className="hidden" width={'80%'} marginLeft="10%">
                 <TabList>
                     <Tab>Europe</Tab>
                     <Tab>North America</Tab>

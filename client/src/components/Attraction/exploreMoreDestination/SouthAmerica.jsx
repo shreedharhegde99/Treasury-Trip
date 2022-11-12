@@ -11,7 +11,7 @@ export default function SouthAmerica(){
         try {
             let response=await axios.get(`${baseUrl}/attractions?country=southamerica`)
             setData(response.data)
-            console.log(response.data)
+            // console.log(response.data)
             
         } catch (error) {
             console.log(error);

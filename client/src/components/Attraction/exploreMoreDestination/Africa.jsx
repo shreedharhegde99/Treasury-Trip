@@ -11,7 +11,7 @@ export default function Africa(){
         try {
             let response=await axios.get(`${baseUrl}/attractions?country=africa`)
             setData(response.data)
-            console.log(response.data)
+            // console.log(response.data)
             
         } catch (error) {
             console.log(error);
