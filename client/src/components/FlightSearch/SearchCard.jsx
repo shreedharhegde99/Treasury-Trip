@@ -2,12 +2,14 @@ import { Container, HStack,Stack, Text, VStack ,Image, Heading, Button,} from "@
 import React from "react"
 import flightitem from "../../assets/flightitem.jpg"
 import airindia from "../../assets/airindia.jpg"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 
 export const SearchCard=(props)=>{
-    const {arrive,departure,loc1,loc2,prc,_id,duration,airline} = props.data
+    const {arrive,departure,loc1,loc2,_id,duration,airline} = props.data
     const date=new Date()
+    const[params,setparams]=useSearchParams()
     const today=date.getDate()
+    let prc=Math.floor(Math.random() * 1000)+1500;
 
     let navigate=useNavigate()
     return(
@@ -33,9 +35,9 @@ export const SearchCard=(props)=>{
 
             <VStack>
                     <Image src={flightitem} mr="-20px" />
-                    <Heading fontSize={"20px"} minW="100%" textAlign={{base:"center",md:"right"}}>{prc}</Heading>
+                    <Heading fontSize={"20px"} minW="100%" textAlign={{base:"center",md:"right"}}>{"₹ "+" "+prc}</Heading>
                     <Text minW="100%" textAlign={{base:"center",md:"right"}}>Total price for all travelers</Text>
-                    <Button  onClick={()=>{navigate("/flights/book")}} colorScheme={"telegram"} minW={"100%"}>Select Flight</Button>
+                    <Button  onClick={()=>{navigate(`/flights/book/flight?id=${_id}&prc=${prc}`)}} colorScheme={"telegram"} minW={"100%"}>Select Flight</Button>
             </VStack>
        </Stack>
 
