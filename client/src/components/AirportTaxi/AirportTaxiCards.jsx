@@ -16,11 +16,10 @@ export default function AirportTaxiCards({
     window.scroll({
       behavior: "smooth",
     });
-    reference.current.focus()
   }
      
 
-  console.log(reference.current);
+  // console.log(reference.current);
   return (
     <Box p="4" border="1px" borderColor="black" minW="xs">
       <Box py="4">

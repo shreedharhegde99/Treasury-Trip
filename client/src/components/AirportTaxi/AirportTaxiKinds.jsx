@@ -10,7 +10,7 @@ import {
 import { Fragment, useState } from "react";
 import AirportTaxiCards from "./AirportTaxiCards";
 
-export default function AirportTaxiKinds({ reference }) {
+export default function AirportTaxiKinds() {
   const [passengers, setPassengers] = useState(1);
 
   return (
@@ -115,7 +115,7 @@ export default function AirportTaxiKinds({ reference }) {
                   bags="2 standard bags"
                   included="Meet & Greet included"
                   cancellation="Free cancellation"
-                  reference={reference}
+                 
                 />
               </GridItem>
               <GridItem
@@ -130,7 +130,7 @@ export default function AirportTaxiKinds({ reference }) {
                   bags="2 standard bags"
                   included="Meet & Greet included"
                   cancellation="Free cancellation"
-                  reference={reference}
+                 
                 />
               </GridItem>
               <GridItem
@@ -145,7 +145,7 @@ export default function AirportTaxiKinds({ reference }) {
                   bags="5 standard bags"
                   included="Meet & Greet included"
                   cancellation="Free cancellation"
-                  reference={reference}
+                 
                 />
               </GridItem>
               <GridItem
@@ -160,7 +160,7 @@ export default function AirportTaxiKinds({ reference }) {
                   bags="6 standard bags"
                   included="Meet & Greet included"
                   cancellation="Free cancellation"
-                  reference={reference}
+                 
                 />
               </GridItem>
               <GridItem
@@ -175,7 +175,7 @@ export default function AirportTaxiKinds({ reference }) {
                   bags="7 standard bags"
                   included="Meet & Greet included"
                   cancellation="Free cancellation"
-                  reference={reference}
+                 
                 />
               </GridItem>
             </Grid>

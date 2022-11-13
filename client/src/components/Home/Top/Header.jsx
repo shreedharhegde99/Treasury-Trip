@@ -75,7 +75,7 @@ const Header = ({ type }) => {
    
   }
 
-console.log(search)
+// console.log(search)
   const handlenavigate = (id) => {
  
   navigate(`/hotels/${id}`)
