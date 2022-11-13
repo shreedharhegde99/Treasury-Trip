@@ -14,7 +14,6 @@ import Stays from "../pages/Stays";
 import { Ticket } from "../pages/Ticket";
 
 
-import ListLanding from "../components/Attraction/ListLanding";
 
 
 import PrivateRoute from "./PrivateRoute";
