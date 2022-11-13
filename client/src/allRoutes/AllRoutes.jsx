@@ -30,14 +30,14 @@ export default function AllRoutes() {
 
       <Route path="/attractions/:city" element={<ListLanding />} />
 
-      <Route path="/login" element={<Login/>} />
+      
     <Route path="/invoice/:id" element={<Ticket/>}/>
       <Route path="/taxis" element={<AirportTaxi />} />
       <Route path="/login" element={<Logging />} />
       <Route path="/register" element={<Register />} />
       <Route path="/flights/search/:myway" element={<FlightSearch />} />
       <Route
-        path="/flights/book"
+        path="/flights/book/:id"
         element={
           <PrivateRoute>
             <PersonalDetails />
