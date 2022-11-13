@@ -1,13 +1,24 @@
 import { Fragment, useState } from "react";
-import { Box, Button, Flex, HStack, Show, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Show,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import CoronaAlert from "../components/AirportTaxi/CoronaAlert";
 import PassengerBookingDetails from "../components/AirportTaxi/PassengerBookingDetails";
 import PassengerDetails from "../components/AirportTaxi/PassengerDetails";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function AirportTaxiResults() {
-// const initData = {
-
-// }
+  const [price, setPrice] = useState("100");
+  const handleSetPrice = (val) => setPrice(val);
+  const toast = useToast();
+  const navigate = useNavigate();
 
   return (
     <Fragment>
@@ -34,8 +45,8 @@ export default function AirportTaxiResults() {
           justify={{ md: "center" }}
           m={{ xl: "auto" }}
         >
-          <PassengerBookingDetails />
-          <PassengerDetails />
+          <PassengerBookingDetails price={price} />
+          <PassengerDetails markPrice={handleSetPrice} price={price} />
         </Flex>
       </Box>
       <Show below="md">
@@ -48,7 +59,7 @@ export default function AirportTaxiResults() {
           w="full"
         >
           <Text py="4" fontWeight="semibold" fontSize="2xl">
-            Rs. 100
+            Rs. {price}
           </Text>
           <Box>
             <Button
@@ -57,8 +68,19 @@ export default function AirportTaxiResults() {
               variant="solid"
               colorScheme="telegram"
               color="white"
+              onClick={() => {
+                toast({
+                  title: "Taxi booked",
+                  description:
+                    "We've created a ride for you. Please send the payment from provided contact number",
+                  status: "success",
+                  duration: 500,
+                  isClosable: true,
+                });
+                setTimeout(() => navigate("/"), 5000);
+              }}
             >
-              Continue to book
+              Confirm Booking.
             </Button>
           </Box>
         </Box>

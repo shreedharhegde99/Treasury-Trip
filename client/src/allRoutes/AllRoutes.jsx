@@ -13,6 +13,8 @@ import Stays from "../pages/Stays";
 // import PrivateRoute from "./PrivateRoute";
 import { Ticket } from "../pages/Ticket";
 import Airport_Taxi from "../pages/AirportTaxis";
+import AirportTaxiResults from "../pages/AirportTaxiResults";
+import AirportTaxiCheckout from "../pages/AirportTaxiCheckout";
 
 export default function AllRoutes() {
   return (
@@ -24,6 +26,11 @@ export default function AllRoutes() {
       <Route path="/taxis" element={<Airport_Taxi />} />
       <Route path="/invoice/:id" element={<Ticket />} />
       <Route path="/taxis" element={<AirportTaxi />} />
+      <Route path="/taxis/taxi-search" element={<AirportTaxiResults />} />
+      {/* <Route
+        path="/taxis/taxi-search/checkout"
+        element={<AirportTaxiCheckout />}
+      /> */}
       <Route path="/login" element={<Logging />} />
       <Route path="/register" element={<Register />} />
       <Route path="/flights/search/:myway" element={<FlightSearch />} />

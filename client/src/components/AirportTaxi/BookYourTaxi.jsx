@@ -13,7 +13,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BsPersonFill } from "react-icons/bs";
@@ -21,11 +21,48 @@ import { RiPlaneFill } from "react-icons/ri";
 import { GrCreditCard } from "react-icons/gr";
 import { GoCheck } from "react-icons/go";
 import CoronaAlert from "./CoronaAlert";
-import data from "../../assets/time.json";
+import timeData from "../../assets/time.json";
+import {
+  resetTaxiData,
+  updateTravelData,
+} from "../../redux/taxis/taxis.action";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function BookYourTaxi() {
   const [trip, setTrip] = useState("oneway");
+  const initData = {
+    from: "",
+    to: "",
+    date: "",
+    hours: "12",
+    mins: "00",
+  };
+  const [data, setData] = useState(initData);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    setData({ ...data, [name]: value });
+  };
+
+  const handleSearch = () => {
+    const { from, to, date, hours, mins } = data;
+    if (from && to && date && hours && mins) {
+      dispatch(updateTravelData(data));
+      setData(initData);
+      console.log(from, to, date, hours, mins);
+      navigate("taxi-search");
+    }
+
+    return;
+  };
+  useEffect(() => {
+    dispatch(resetTaxiData());
+  }, []);
+
+  // console.log(data);
   return (
     <Fragment>
       <CoronaAlert />
@@ -75,6 +112,9 @@ export default function BookYourTaxi() {
                 variant="outline"
                 border="none"
                 placeholder="Enter pick-up location"
+                value={data.from}
+                onChange={handleChange}
+                name="from"
               />
             </Box>
           </HStack>
@@ -96,6 +136,9 @@ export default function BookYourTaxi() {
                 variant="outline"
                 border="none"
                 placeholder="Enter destination"
+                value={data.to}
+                onChange={handleChange}
+                name="to"
               />
             </Box>
           </HStack>
@@ -107,7 +150,13 @@ export default function BookYourTaxi() {
           borderY="2px"
           borderColor="yellow.400"
         >
-          <Input type="date" w="full" />
+          <Input
+            type="date"
+            w="full"
+            value={data.date}
+            onChange={handleChange}
+            name="date"
+          />
         </GridItem>
         <GridItem w="full" borderX="4px" borderColor="yellow.400" h="full">
           <HStack
@@ -122,8 +171,8 @@ export default function BookYourTaxi() {
             </Box>
             <Flex w="full">
               <Box w="full">
-                <Select value="01">
-                  {data.hours.map((el) => (
+                <Select value={data.hours} onChange={handleChange} name="hours">
+                  {timeData.hours.map((el) => (
                     <option key={el} value={el}>
                       {el}
                     </option>
@@ -131,8 +180,8 @@ export default function BookYourTaxi() {
                 </Select>
               </Box>
               <Box w="full">
-                <Select value={"00"}>
-                  {data.minutes.map((el) => (
+                <Select value={data.mins} onChange={handleChange} name="mins">
+                  {timeData.minutes.map((el) => (
                     <option key={el} value={el}>
                       {el}
                     </option>
@@ -155,6 +204,7 @@ export default function BookYourTaxi() {
             variant="solid"
             colorScheme="telegram"
             h={{ base: "10", lg: "full" }}
+            onClick={handleSearch}
           >
             Search
           </Button>

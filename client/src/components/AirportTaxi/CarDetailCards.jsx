@@ -11,7 +11,7 @@ export default function CarDetailCards({ data, select, selected }) {
         border={`${selected === type ? "4px" : "2px"}`}
         borderColor={`${selected === type ? "#0077cc" : "black"}`}
         minW="2xs"
-        onClick={() => select(type)}
+        onClick={() => select(type, price)}
         p="4"
         position="relative"
         fontWeight="semibold"
