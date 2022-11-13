@@ -15,7 +15,7 @@ export default function SubscribeLetter() {
   return (
     <Fragment>
       <Show above="lg">
-        <Box bg="#00224f">
+        <Box bg="#00224f"  w="full">
           <Box textAlign="center" color="white" py="12" maxW="container.lg" m="auto">
             <Box>
               <Heading as="h2" size="lg" py="2">

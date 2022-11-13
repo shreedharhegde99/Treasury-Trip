@@ -22,7 +22,7 @@ import { GrCreditCard } from "react-icons/gr";
 import { GoCheck } from "react-icons/go";
 import CoronaAlert from "./CoronaAlert";
 
-export default function BookYourTaxi({reference}) {
+export default function BookYourTaxi() {
   const [trip, setTrip] = useState("oneway");
   const [hr, setHr] = useState("");
   const [min, setMin] = useState("");
@@ -75,7 +75,6 @@ export default function BookYourTaxi({reference}) {
                 variant="outline"
                 border="none"
                 placeholder="Enter pick-up location"
-                ref={reference}
               />
             </Box>
           </HStack>
