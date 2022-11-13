@@ -39,9 +39,9 @@ export default function AllRoutes() {
       <Route
         path="/flights/book/:id"
         element={
-          <PrivateRoute>
+          
             <PersonalDetails />
-          </PrivateRoute>
+    
         }
       />
 

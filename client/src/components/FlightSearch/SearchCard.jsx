@@ -13,7 +13,7 @@ export const SearchCard=(props)=>{
 
     let navigate=useNavigate()
     return(
-       <Stack bgColor={"#f9f9f9"} key={_id} direction={{base:"column",md:"row"}} alignContent="center" alignItems="center" p={"10px"} border="1px" borderColor={"silver"}  boxShadow='base' borderRadius="20px" justifyContent={"space-evenly"} minW={{base:"90%",md:"690px"}} maxW={{base:"90%",md:"690px"}}>
+       <Stack bgColor={"#f9f9f9"} key={departure+duration+airline} direction={{base:"column",md:"row"}} alignContent="center" alignItems="center" p={"10px"} border="1px" borderColor={"silver"}  boxShadow='base' borderRadius="20px" justifyContent={"space-evenly"} minW={{base:"90%",md:"690px"}} maxW={{base:"90%",md:"690px"}}>
         <VStack>
             <Image src={airindia}/>
             <Text>{airline}</Text>
