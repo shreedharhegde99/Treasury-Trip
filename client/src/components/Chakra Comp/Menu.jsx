@@ -9,6 +9,7 @@ import {
   DrawerContent,
   Button,
   Box,
+  Heading,
 } from "@chakra-ui/react";
 import {EditIcon, HamburgerIcon, UnlockIcon} from "@chakra-ui/icons";
 import {Link, useNavigate} from "react-router-dom";
@@ -42,33 +43,46 @@ const MenuBar = () => {
       <Button
         as={IconButton}
         icon={<HamburgerIcon />}
-        colorScheme="teal"
+        bg="#00224F"
+        fontSize={20}
+        border={"0.5px solid"}
+        p={7}
         onClick={onOpen}
       >
         Open
       </Button>
       <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
-        <DrawerContent color={"white"} bg="teal.700">
-          <DrawerHeader display={"flex"} gap="20px" borderBottomWidth="3px">
-            Treasury Trip
-            <Button
-              onClick={handleClick}
-              bg={"teal.700"}
-              color={"white"}
-              outlineColor={"white"}
-            >
-              <UnlockIcon color={"white"} mr={2} />
-              {changingBtn}
-            </Button>
-            <Link to="register">
-              <Button color={"white"} bg={"teal.700"} outlineColor={"white"}>
-                <EditIcon color={"white"} mr={2} />
-                Register
+        <DrawerContent p={2} color={"white"} bg="teal.700">
+          <DrawerHeader
+            display={"flex"}
+            justifyContent="space-around"
+            p={5}
+            borderBottomWidth="3px"
+            mb={1}
+          >
+            <Box>
+              <Heading>Treasury Trip</Heading>
+            </Box>
+            <Box display={"flex"} gap={10}>
+              <Button
+                onClick={handleClick}
+                bg={"teal.700"}
+                color={"white"}
+                outlineColor={"white"}
+              >
+                <UnlockIcon color={"white"} mr={2} />
+                {changingBtn}
               </Button>
-            </Link>
+              <Link to="register">
+                <Button color={"white"} bg={"teal.700"} outlineColor={"white"}>
+                  <EditIcon color={"white"} mr={2} />
+                  Register
+                </Button>
+              </Link>
+            </Box>
           </DrawerHeader>
-          <DrawerBody p={3} display={"flex"} justifyContent="space-between">
+          <DrawerBody p={3} display={"flex"} justifyContent="space-around">
             <Link to="/">
               <Box display={"flex"} flexDir="column" alignItems={"center"}>
                 <IoIosBed />

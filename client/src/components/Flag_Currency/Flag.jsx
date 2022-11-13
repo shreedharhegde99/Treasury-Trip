@@ -47,9 +47,9 @@ const Flag = () => {
           spinnerPlacement="end"
         >
           {!name ? (
-            <Image m={"auto"} src="https://flagcdn.com/in.svg" />
+            <Image m={"auto"} maxW={10} src="https://flagcdn.com/in.svg" />
           ) : (
-            <Image m={"auto"} src={name} />
+            <Image m={"auto"} maxW={10} src={name} />
           )}
         </MenuButton>
         <MenuList

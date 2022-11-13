@@ -14,7 +14,7 @@ import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {auth} from "../../Firebase/firebase";
 import Medium from "./Medium";
-
+import babe from "../../assets/mygf.png"
 const obj = {
   email: "",
   password: "",
@@ -80,7 +80,7 @@ const Register = () => {
   return (
     <>
       <Box
-        // border={"1px solid"}
+        // border={"1px solid red"}
         bg="#FAFAFA"
         m="auto"
         display={"flex"}
@@ -89,15 +89,14 @@ const Register = () => {
         alignItems={"center"}
       >
         <Box
-        
           p="20px 0px"
-          w={["100%", "70%", "70%", "45%"]}
-          mt={[1, 2, 4, 10]}
+          w={["100%", "70%", "70%", "50%"]}
+          mt={[1, 2, 4, 4]}
           display="flex"
           flexDir={"column"}
           alignItems="center"
           textAlign={"center"}
-        justifyContent="center"
+          justifyContent="center"
           bg="whiteAlpha.700"
           // border={"1px solid"}
           borderRadius={7}
@@ -105,7 +104,7 @@ const Register = () => {
           <Heading fontSize={25} mb={4}>
             Create an account
           </Heading>
-          <Box m={"auto"} w={["100", "60%"]}>
+          <Box m={"auto"} w={["70%", "60%"]}>
             <Input
               onChange={handleChange}
               type="text"
@@ -150,8 +149,8 @@ const Register = () => {
           <Hide breakpoint="(max-width: 600px)">
             <Image
               // objectFit={"cover"}
-
-              src="https://img.freepik.com/free-photo/what-are-you-waiting-sign-up-now-confident-determined-happy-friendlylooking-attractive-woman-yellow-tshirt-pointing-upper-left-corner-advice-buy-black-friday-sale-smiling-pleased_176420-50940.jpg?w=1060&t=st=1668331858~exp=1668332458~hmac=baaa0c243e3a6203272bc319875fdf0b7e67b4a9d347a7281a0743cb05d1e720"
+              w={"80%"}
+              src={babe}
             />
           </Hide>
         </Box>
