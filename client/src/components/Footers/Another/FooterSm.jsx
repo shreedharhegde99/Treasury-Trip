@@ -18,7 +18,13 @@ import {BiMailSend} from "react-icons/bi";
 import logo from "../../../assets/Logo.png";
 const Logo = (props) => {
   return (
-    <Box display={"flex"} flexDir={["column","row"]} gap="3" w={"100%"} alignItems="center">
+    <Box
+      display={"flex"}
+      flexDir={["column", "row"]}
+      gap="3"
+      w={"100%"}
+      alignItems="center"
+    >
       <Image w={"14"} borderRadius={"6rem"} src={logo} />
       <Heading fontSize={24}>Treasury Trip</Heading>
     </Box>
@@ -67,7 +73,7 @@ export default function LargeWithNewsletter() {
           templateColumns={{sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr"}}
           spacing={8}
         >
-          <Stack  spacing={4}>
+          <Stack spacing={4}>
             <Box>
               <Logo color={useColorModeValue("gray.700", "white")} />
             </Box>
@@ -127,5 +133,5 @@ export default function LargeWithNewsletter() {
         </SimpleGrid>
       </Container>
     </Box>
-  )
+  );
 }
