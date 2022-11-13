@@ -3,5 +3,6 @@
   "taxi": "https://q-xx.bstatic.com/psb/capla/static/media/taxi-book-taxi.4fcb8e24.svg",
   "driver": "https://q-xx.bstatic.com/psb/capla/static/media/taxi-meet-driver.d6713568.svg",
   "destination": "https://q-xx.bstatic.com/psb/capla/static/media/taxi-arrive-at-destination.b3ceb242.svg",
-  "download_app": "https://t-cf.bstatic.com/mobile/images/gta/booking-app-logo-128/8c0a29a0f8657ad4d395e725225770a6d2b7904c.png"
+  "download_app": "https://t-cf.bstatic.com/mobile/images/gta/booking-app-logo-128/8c0a29a0f8657ad4d395e725225770a6d2b7904c.png",
+  "searchpage_signin": "https://assets.taxi.booking.com/4.477.0/img/genius-globe.png"
 }
