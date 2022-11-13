@@ -76,7 +76,7 @@ const Medium = () => {
         <Box
           w={"80%"}
           m="auto"
-          fontSize={13}
+          fontSize={10}
           p={"30px 0"}
           borderBottomWidth="3px"
         >
@@ -85,7 +85,7 @@ const Medium = () => {
             Conditions and Privacy Statement
           </Text>
         </Box>
-        <Box w={"70%"} m="auto" fontSize={13}>
+        <Box w={"70%"} m="auto" fontSize={10}>
           <Text>All rights reserved.</Text>
           <Text> Copyright (2006-2022) – Treasury Trip.com™</Text>
         </Box>

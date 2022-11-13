@@ -11,6 +11,7 @@ import {PersonalDetails} from "../pages/PersonalDetails";
 import Stays from "../pages/Stays";
 import PrivateRoute from "./PrivateRoute";
 import { Ticket } from "../pages/Ticket";
+import GridBlurredBackdrop from "../components/Footers/Another/Testimonial";
 
 export default function AllRoutes() {
   return (
@@ -32,7 +33,7 @@ export default function AllRoutes() {
           </PrivateRoute>
         }
       />
-
+<Route path="/treasury/testimonials" element={<GridBlurredBackdrop/>}/>
       <Route path="/car-rentals" element={<NotFound />} />
       <Route path="*" element={<NotFound />} />
     
