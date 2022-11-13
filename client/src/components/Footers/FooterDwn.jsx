@@ -5,7 +5,11 @@ import { useLocation } from "react-router-dom";
 const FooterDwn = () => {
   const { pathname } = useLocation();
 
-  if (pathname === "/car-rentals") {
+  if (
+    pathname === "/car-rentals" ||
+    pathname === "/login" ||
+    pathname === "/register"
+  ) {
     return null;
   } else {
     return (

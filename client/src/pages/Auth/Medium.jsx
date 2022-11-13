@@ -1,7 +1,41 @@
-import {Box, HStack, Text} from "@chakra-ui/react";
+import { Box, HStack, Text, useToast } from "@chakra-ui/react";
+import { useGoogleLogin } from "@react-oauth/google";
 import React from "react";
-import {AiFillFacebook, AiFillGoogleCircle, AiFillMobile} from "react-icons/ai";
+import { AiFillFacebook, AiFillGoogleCircle, AiFillMobile } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { isAuth } from "../../redux/auth/auth.actions";
 const Medium = () => {
+  const {login} = useSelector((state) => state.Authentication);
+  console.log(login);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const toast = useToast();
+  const loging = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      toast({
+        title: "Logged in successfully",
+        position: "top-right",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+      dispatch(isAuth());
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    },
+    onError: () => {
+      toast({
+        title: "Login failed",
+        position: "top-right",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    },
+  });
+
   return (
     <>
       <Box>
@@ -24,7 +58,7 @@ const Medium = () => {
               _hover={{border: "1px solid"}}
               p={4}
             >
-              <AiFillGoogleCircle fontSize={40} />
+              <AiFillGoogleCircle onClick={() => loging()} fontSize={40} />
             </Box>
             <Box
               display={"flex"}

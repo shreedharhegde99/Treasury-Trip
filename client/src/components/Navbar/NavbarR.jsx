@@ -1,10 +1,10 @@
 import { Box, Hide } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { IoIosBed } from "react-icons/io";
 import { AiFillCar } from "react-icons/ai";
-import { MdFlightTakeoff } from "react-icons/md";
 import { FaPlaceOfWorship, FaTaxi } from "react-icons/fa";
+import { IoIosBed } from "react-icons/io";
+import { MdFlightTakeoff } from "react-icons/md";
+import { useLocation } from "react-router-dom";
 import NavbarButton from "./NavbarButton";
 
 const NavbarR = () => {
@@ -17,7 +17,7 @@ const NavbarR = () => {
   return (
     <>
       <Hide breakpoint="(max-width: 1000px)">
-        <Box bg="teal.800" color={"white"}>
+        <Box bg="#00224F" color={"white"}>
           <Box
             w={"70%"}
             pb="15px"
@@ -30,7 +30,7 @@ const NavbarR = () => {
             <NavbarButton
               active={active}
               text="Stays"
-              link="stays"
+              link=""
               icon={<IoIosBed />}
             />
             <NavbarButton
