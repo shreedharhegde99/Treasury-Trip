@@ -11,8 +11,6 @@ import {PersonalDetails} from "../pages/PersonalDetails";
 import Stays from "../pages/Stays";
 import PrivateRoute from "./PrivateRoute";
 import { Ticket } from "../pages/Ticket";
-import Airport_Taxi from "../pages/AirportTaxis"
-import ListLanding from "../components/Attraction/ListLanding";
 
 export default function AllRoutes() {
   return (
@@ -21,7 +19,6 @@ export default function AllRoutes() {
       <Route path="/flights" element={<Flights />} />
       <Route path="/attractions" element={<Attractions />} />
       <Route path="/attractions/:city" element={<ListLanding />} />
-      <Route path="/login" element={<Login/>} />
     <Route path="/invoice/:id" element={<Ticket/>}/>
       <Route path="/taxis" element={<AirportTaxi />} />
       <Route path="/login" element={<Logging />} />
