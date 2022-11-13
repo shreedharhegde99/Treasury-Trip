@@ -11,13 +11,31 @@ import {
   Box,
 } from "@chakra-ui/react";
 import {EditIcon, HamburgerIcon, UnlockIcon} from "@chakra-ui/icons";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {IoIosBed} from "react-icons/io";
 import {MdFlightTakeoff} from "react-icons/md";
 import {FaPlaceOfWorship, FaTaxi} from "react-icons/fa";
+import {useDispatch, useSelector} from "react-redux";
+import {isNotAuth} from "../../redux/auth/auth.actions";
 
 const MenuBar = () => {
   const {isOpen, onOpen, onClose} = useDisclosure();
+  const {login} = useSelector((store) => store.Authentication);
+  let changingBtn;
+  {
+    login ? (changingBtn = "Logout") : (changingBtn = "Login");
+  }
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    if (changingBtn === "Logout") {
+      dispatch(isNotAuth());
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <>
@@ -34,13 +52,15 @@ const MenuBar = () => {
         <DrawerContent color={"white"} bg="teal.700">
           <DrawerHeader display={"flex"} gap="20px" borderBottomWidth="3px">
             Treasury Trip
-            <Link to="login">
-              {" "}
-              <Button bg={"teal.700"} color={"white"} outlineColor={"white"}>
-                <UnlockIcon color={"white"} mr={2} />
-                Login
-              </Button>
-            </Link>
+            <Button
+              onClick={handleClick}
+              bg={"teal.700"}
+              color={"white"}
+              outlineColor={"white"}
+            >
+              <UnlockIcon color={"white"} mr={2} />
+              {changingBtn}
+            </Button>
             <Link to="register">
               <Button color={"white"} bg={"teal.700"} outlineColor={"white"}>
                 <EditIcon color={"white"} mr={2} />
@@ -49,7 +69,7 @@ const MenuBar = () => {
             </Link>
           </DrawerHeader>
           <DrawerBody p={3} display={"flex"} justifyContent="space-between">
-            <Link to="/stays">
+            <Link to="/">
               <Box display={"flex"} flexDir="column" alignItems={"center"}>
                 <IoIosBed />
                 Stays

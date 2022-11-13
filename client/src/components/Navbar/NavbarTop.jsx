@@ -1,16 +1,33 @@
+import { Box, Button, Heading, Hide, Show, Text } from "@chakra-ui/react";
+import { googleLogout } from "@react-oauth/google";
 import React from "react";
-import { Box, Button, Heading, Show, Text, Hide } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { isNotAuth } from "../../redux/auth/auth.actions";
 import MenuBar from "../Chakra Comp/Menu";
 import Flag from "../Flag_Currency/Flag";
-import { Link } from "react-router-dom";
-// import Logo from "../assets/Logo.png"
 export const NavbarTop = () => {
+  const {login} = useSelector((store) => store.Authentication);
+  let changingBtn;
+    login ? (changingBtn = "Logout") : (changingBtn = "Login");
+  
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    if (changingBtn === "Logout") {
+      dispatch(isNotAuth());
+      googleLogout();
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <>
       <Box
         // border={"1px solid"}
         display="flex"
-        bg="teal.800"
+        bg="#00224F"
         w="100%"
         p={4}
         color="white"
@@ -24,7 +41,7 @@ export const NavbarTop = () => {
         >
           <Heading fontSize={["md", "md", "2xl"]} fontFamily={"monospace"}>
             {" "}
-            <Link to="/stays">Treasury Trip</Link>
+            <Link to="/">Treasury Trip</Link>
           </Heading>
         </Box>
         <Box
@@ -47,7 +64,8 @@ export const NavbarTop = () => {
           </Box>
           <Hide breakpoint="(max-width: 1024px)">
             <Button
-              bg="teal"
+              color={"black"}
+              bg="whitesmoke"
               fontSize={["sm", "md"]}
               p={5}
               _hover={{
@@ -64,10 +82,10 @@ export const NavbarTop = () => {
               {" "}
               <Button color={"black"}>Register </Button>
             </Link>
-            <Link to="/login">
-              {" "}
-              <Button color={"black"}>Login</Button>
-            </Link>
+
+            <Button onClick={handleClick} color={"black"}>
+              {changingBtn}
+            </Button>
           </Hide>
         </Box>
         <Show breakpoint="(max-width: 600px)">

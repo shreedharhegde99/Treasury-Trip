@@ -1,7 +1,7 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import {Box, Flex, Text} from "@chakra-ui/react";
+import {Link} from "react-router-dom";
 
-export default function NavbarButton({ active, setActive, text, icon, link }) {
+export default function NavbarButton({active, setActive, text, icon, link}) {
   // console.log(active);
   return (
     <Link to={`/${link}`}>

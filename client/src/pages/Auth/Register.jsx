@@ -2,39 +2,122 @@ import {
   Box,
   Button,
   Heading,
+  Image,
   Input,
   InputGroup,
   InputRightElement,
+  useToast
 } from "@chakra-ui/react";
-import React from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../Firebase/firebase";
 import Medium from "./Medium";
 
+const obj = {
+  email: "",
+  password: "",
+};
 const Register = () => {
+  const toast = useToast();
+  const navigate = useNavigate();
   const [show, setShow] = React.useState(false);
+  const [load, setLoad] = useState(false);
+  const [text, setText] = useState(obj);
   const handleClick = () => setShow(!show);
+
+  const handleChange = (e) => {
+    // console.log(e.target);
+    const { name, value } = e.target;
+    setText({ ...text, [name]: value });
+  };
+
+  const { email, password } = text;
+
+  const handleSubmit = () => {
+    if (email !== "" && password !== "") {
+      setLoad(true);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((res) => {
+          setLoad(false);
+
+          // const user = res.user;
+          // console.log(user);
+
+          toast({
+            title: "Register Success",
+            position: "top-right",
+            status: "success",
+            duration: 2000,
+            isClosable: true,
+          });
+          navigate("/login");
+        })
+        .catch((err) => {
+          setLoad(false);
+          toast({
+            title: "Email is already in use",
+            position: "top-right",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+          });
+        });
+
+      setText(obj);
+    } else {
+      toast({
+        title: "Input fields first",
+        position: "top-right",
+        status: "warning",
+        duration: 2000,
+        isClosable: true,
+      });
+    }
+  };
+
 
   return (
     <>
-      <Box>
+      <Box
+        // border={"1px solid"}
+        w="100%"
+        m="auto"
+        display={"flex"}
+        flexDir={["column", "column", "row"]}
+        justifyContent="space-evenly"
+        alignItems={"center"}
+      >
         <Box
           p="20px 0px"
-          // border="1px solid"
-          w={["100%", "70%", "70%", "35%"]}
-          m="auto"
+          w={["100%", "70%", "70%", "45%"]}
           mt={[1, 2, 4, 10]}
           display="flex"
           flexDir={"column"}
-          justifyContent="center"
           textAlign={"center"}
+          bg="whiteAlpha.700"
+          // border={"1px solid"}
+          borderRadius={7}
         >
           <Heading fontSize={25} mb={4}>
-            Sign in or create an account
+            Create an account
           </Heading>
           <Box m={"auto"} w={["100", "60%"]}>
-            <Input type="text" mb={3} placeholder="Enter email" />
+            <Input
+              onChange={handleChange}
+              type="text"
+              mb={3}
+              value={email}
+              border="2px solid"
+              name="email"
+              placeholder="Enter email"
+            />
             <InputGroup size="md">
               <Input
-                border={"1px solid black"}
+                name="password"
+                onChange={handleChange}
+                value={password}
+                border={"2px solid"}
                 pr="4.5rem"
                 type={show ? "text" : "password"}
                 mb={2}
@@ -46,12 +129,25 @@ const Register = () => {
                 </Button>
               </InputRightElement>
             </InputGroup>
-            <Button border={"2px solid teal"} mb={5}>
+            <Button
+              w={"100%"}
+              disabled={load}
+              onClick={handleSubmit}
+              border="2px solid teal"
+              mb={5}
+              mt={5}
+            >
               Register
             </Button>
           </Box>
 
           <Medium />
+        </Box>
+        <Box>
+          <Image
+            objectFit={"cover"}
+            src="https://images.pexels.com/photos/3643925/pexels-photo-3643925.jpeg?auto=compress&cs=tinysrgb&w=600"
+          />
         </Box>
       </Box>
     </>
