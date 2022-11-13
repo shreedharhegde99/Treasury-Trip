@@ -1,10 +1,12 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import "./PropertyList.css";
 
 const PropertyList = () => {
   return (
     <div style={{width:"100%",margin:"auto"}}>
+     
       <SimpleGrid className="pList" columns={{base:2,sm:3,md:5}}>
+     
       <div className="pListItem">
         <img
           src="https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o="
