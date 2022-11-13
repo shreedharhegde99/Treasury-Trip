@@ -1,5 +1,5 @@
 
-
+*{font-size: 19px;}
   .headerSearch {
     height: auto;
     background-color: #fffcfc;
@@ -14,6 +14,7 @@
     /* position: absolute; */
     width: 90%;
     margin: auto;
+    margin: 20px;
     /* max-width: 1324px; */
   
 

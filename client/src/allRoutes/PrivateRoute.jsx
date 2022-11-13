@@ -3,7 +3,7 @@ import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
-const PrivateRoute = () => {
+const PrivateRoute = ({children}) => {
   const {login} = useSelector((state) => state.Authentication);
   const toast = useToast();
 
@@ -20,6 +20,8 @@ const PrivateRoute = () => {
       });
     }
   }, [login]);
+
+  return (children);
 };
 
 export default PrivateRoute;

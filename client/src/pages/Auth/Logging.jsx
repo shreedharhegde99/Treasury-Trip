@@ -124,7 +124,7 @@ const Logging = () => {
       </Flex>
       <Flex flex={1}>
         <Image
-          laoding="lazy"
+          loading="lazy"
           objectFit={"cover"}
           borderRadius={"2rem"}
           w={"90%"}
