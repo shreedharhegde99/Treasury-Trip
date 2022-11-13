@@ -1,14 +1,13 @@
 import AllRoutes from "./allRoutes/AllRoutes";
 import "./App.css";
-import { NavbarTop } from "./components/NavbarTop";
+import FooterDwn from "./components/Footers/FooterDwn";
+import { NavbarTop } from "./components/Navbar/NavbarTop";
 
 function App() {
   return <div>
     <NavbarTop />
     <AllRoutes /> 
-
-    
-  
+  <FooterDwn/>
   </div>;
 }
 

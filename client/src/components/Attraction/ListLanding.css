@@ -1,0 +1,25 @@
+.hover:hover{
+    background-color: rgb(226, 226, 226);
+}
+.rightalign{
+    margin-left: 80%;
+    margin-top: -5%;
+    font-size: 14px;
+}
+.rightalign span{
+    font-weight: bold;
+    font-size: 15px;
+}
+.seeAvail{
+    margin-left: 64%;
+    color:#006CE4;
+    border: 1px solid #006CE4;
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+.seeAvail:hover{
+    background-color: #d7e3f1 ;
+}
+.textHover:hover{
+    color:#006CE4;
+}
