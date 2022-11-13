@@ -1,4 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
+import SearchItem from "../components/Home/SearchData/SearchItem";
+import Home from "../pages/Home2/Home";
+import Hotel from "../pages/hotel/Hotel";
+import List from "../pages/list/List";
 import AirportTaxi from "../pages/AirportTaxis";
 import Attractions from "../pages/Attractions";
 import Login from "../pages/Auth/Login";
@@ -13,20 +17,19 @@ import Stays from "../pages/Stays";
 export default function AllRoutes() {
   return (
     <Routes>
+      < Route path="/" element={<Home/>}/>
       <Route path="/stays" element={<Stays />} />
       <Route path="/flights" element={<Flights />} />
       <Route path="/attractions" element={<Attractions />} />
-      <Route path="/taxis" element={<Airport_Taxi />} />
-      <Route path="/login" element={<Login/>} />
-
       <Route path="/taxis" element={<AirportTaxi />} />
       <Route path="/login" element={<Login />} />
-
       <Route path="/register" element={<Register />} />
       <Route path="/flights/search/:myway" element={<FlightSearch />} />
       <Route path="/flights/book" element={<PersonalDetails />} />
       <Route path="/car-rentals" element={<NotFound />} />
+      <Route path="/hotels/:id" element={<List/>}/>
       <Route path="*" element={<NotFound />} />
+    
     </Routes>
   );
 }
