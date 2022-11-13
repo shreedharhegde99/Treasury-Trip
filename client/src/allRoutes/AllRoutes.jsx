@@ -8,7 +8,8 @@ import { FlightSearch } from "../pages/FlightSearch";
 import NotFound from "../pages/NotFound";
 import { PersonalDetails } from "../pages/PersonalDetails";
 import Stays from "../pages/Stays";
-
+import Airport_Taxi from "../pages/AirportTaxis"
+import ListLanding from "../components/Attraction/ListLanding";
 
 export default function AllRoutes() {
   return (
@@ -16,6 +17,9 @@ export default function AllRoutes() {
       <Route path="/stays" element={<Stays />} />
       <Route path="/flights" element={<Flights />} />
       <Route path="/attractions" element={<Attractions />} />
+      <Route path="/attractions/:city" element={<ListLanding />} />
+
+
       <Route path="/taxis" element={<Airport_Taxi />} />
       <Route path="/login" element={<Login/>} />
 
