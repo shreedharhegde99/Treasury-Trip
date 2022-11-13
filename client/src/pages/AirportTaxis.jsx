@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
 import TaxiFaq from "../components/AirportTaxi/TaxiFaq";
 import DownloadApp from "../components/AirportTaxi/DownloadApp";
 import SubscribeLetter from "../components/AirportTaxi/SubscribeLetter";
@@ -8,12 +8,13 @@ import AirportTaxiKinds from "../components/AirportTaxi/AirportTaxiKinds";
 import NavbarR from "../components/Navbar/NavbarR";
 
 export default function AirportTaxi() {
+  const inputRef = useRef("test");
   return (
     <Fragment>
       <NavbarR />
-      <BookYourTaxi />
+      <BookYourTaxi  reference={inputRef}/>
       <AirportTransferDetail />
-      <AirportTaxiKinds />
+      <AirportTaxiKinds reference={inputRef} />
       <TaxiFaq />
       <DownloadApp />
       <SubscribeLetter />

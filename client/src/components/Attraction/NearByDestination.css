@@ -52,8 +52,9 @@
 }
 .hidden{
     /* Internet Explorer 10+ */
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
   overflow-x: scroll;
+  /* scrollbar-width: none; */
 }
 
 

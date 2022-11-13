@@ -6,35 +6,38 @@ import { Tabs, TabList, Tab } from '@chakra-ui/react'
 import "./ListLanding.css"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getCityData } from "../../redux/attractions/attractions.action"
-import NavbarR from "../NavbarR"
+import { getCityData, loaded } from "../../redux/attractions/attractions.action"
+import { Navigate, useParams } from "react-router-dom"
+import NavbarR from "../Navbar/NavbarR"
 export default function ListLanding(){
-    const {cityData}=useSelector(state=>state.attraction)
+    const {cityData,dataLoaded}=useSelector(state=>state.attraction)
     const [data,setData]=useState(cityData)
-    const [citySearch,setCitySearch]=useState('ahmedabad')
-    // const [text,setText]=useState('')
+    const {city}=useParams()
+    const [citySearch,setCitySearch]=useState(city)
 
     const dispatch=useDispatch()
-    // console.log(dataLoaded);
     
     const handleSearch=(city)=>{
         dispatch(getCityData(city))
-        uppercase()
         // setData(cityData)
-         console.log("inside handle search");
      }
-     const uppercase=()=>{
-        let city=citySearch[0].toUpperCase()+citySearch.slice(1)
-        setCitySearch(city)
+     const getCity=(val)=>{
+        let city=val[0].toUpperCase()+val.slice(1)
+        return city
      }
 
     useEffect(()=>{
-        handleSearch(citySearch)
+        dispatch(loaded(false))
     },[])
 
     useEffect(()=>{
-         setData(cityData) 
+        setData(cityData) 
     },[cityData])
+
+    if(dataLoaded){
+        dispatch(loaded(false))
+        return <Navigate to={`/attractions/${citySearch}`} replace={true}/>
+    }
 
     const sortLowToHigh=()=>{
         let updatedData=[...data].sort((a,b)=>{
@@ -61,12 +64,12 @@ export default function ListLanding(){
         })
         setData(updatedData)
     }
-    console.log(data)
+    // console.log(data)
 
     return (
        <Box>
         <NavbarR/>
-          <Box ml={'10%'} pt={'3%'} style={{fontWeight:'bold',fontSize:'25px'}}>{citySearch} Attractions</Box>
+          <Box ml={'10%'} pt={'3%'} style={{fontWeight:'bold',fontSize:'25px'}}>{getCity(city)} Attractions</Box>
          <HStack align={'start'}>  
             {/* Left-Box */}
             <Box mt={'20px'} ml={'10%'} mr={'5%'} w="28%">
@@ -159,16 +162,3 @@ export default function ListLanding(){
            
     )
 }
-
-  // <Box w="90%" ml={'10%'} border={'1px'} mt={'10%'}>
-        //     <HStack>
-
-
-        //          <Box>  
-        //                <Stack>
-
-        //                <Box w='100%' h='250px' border={'1px solid red'}></Box>
-        //                <Box w='100%' h='250px' border={'1px solid red'}></Box>
-        //                <Box></Box>
-        //                </Stack>
-        //         </Box>

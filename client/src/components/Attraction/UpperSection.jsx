@@ -1,13 +1,10 @@
-import {Box, Button, HStack, Input,InputGroup,InputLeftElement, VStack } from '@chakra-ui/react'
-// import {AiOutlineCalendar} from "react-icons/ai"
+import {Box, Button, HStack, Input,InputGroup,InputLeftElement} from '@chakra-ui/react'
 import {GiTreeDoor} from "react-icons/gi"
 import { FaInfoCircle } from "react-icons/fa";
 import NearByDestination from './NearByDestination';
 import { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from "react-redux"
-// import axios from 'axios';
-// import { useEffect } from 'react';
-import { getCityData } from '../../redux/attractions/attractions.action';
+import { getCityData, loaded } from '../../redux/attractions/attractions.action';
 import { useNavigate } from 'react-router-dom';
 
 const cityArray=['MUMBAI','BANGALORE','DELHI','KOLKATA','AHMEDABAD','GOA']
@@ -17,12 +14,12 @@ export default function UpperSection() {
     const [date,setDate]=useState('')
     // const [suggestion,setSuggestion]=useState([])
     const {dataLoaded}=useSelector(state=>state.attraction)
-    console.log(dataLoaded);
+    // console.log(dataLoaded);
     const dispatch=useDispatch()
     const navigate=useNavigate()
 
     const handleChange=(e)=>{
-         console.log(e.target.value)
+        // console.log(e.target.value)
          setText(e.target.value)
     }
     // console.log(date);
@@ -32,7 +29,15 @@ export default function UpperSection() {
             return 
         }
        dispatch(getCityData(text))
-        console.log("inside handle search");
+        // console.log("inside handle search");
+    }
+    useEffect(()=>{
+       dispatch(loaded(false))
+    },[])
+
+    if(dataLoaded){
+        dispatch(loaded(false))
+        navigate (`${text}`)
     }
      
     // useEffect(()=>{
