@@ -5,6 +5,10 @@ import PassengerBookingDetails from "../components/AirportTaxi/PassengerBookingD
 import PassengerDetails from "../components/AirportTaxi/PassengerDetails";
 
 export default function AirportTaxiResults() {
+// const initData = {
+
+// }
+
   return (
     <Fragment>
       <Show below="md">

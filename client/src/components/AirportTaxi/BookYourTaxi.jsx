@@ -21,11 +21,11 @@ import { RiPlaneFill } from "react-icons/ri";
 import { GrCreditCard } from "react-icons/gr";
 import { GoCheck } from "react-icons/go";
 import CoronaAlert from "./CoronaAlert";
+import data from "../../assets/time.json";
 
 export default function BookYourTaxi() {
   const [trip, setTrip] = useState("oneway");
-  const [hr, setHr] = useState("");
-  const [min, setMin] = useState("");
+
   return (
     <Fragment>
       <CoronaAlert />
@@ -52,7 +52,7 @@ export default function BookYourTaxi() {
         templateColumns={{
           base: "1fr",
           md: "repeat(2,1fr)",
-          lg: "repeat(3,1fr) 2fr 1fr",
+          lg: "repeat(5,1fr)",
         }}
         p="4"
         maxW="container.lg"
@@ -110,33 +110,37 @@ export default function BookYourTaxi() {
           <Input type="date" w="full" />
         </GridItem>
         <GridItem w="full" borderX="4px" borderColor="yellow.400" h="full">
-          <Grid templateColumns={"repeat(2,1fr)"} h="full">
-            <HStack
-              border="2px"
-              borderColor="yellow.400"
-              h="full"
-              p="3"
-              flexGrow="1"
-            >
-              <Box>
-                <AiOutlineClockCircle />
+          <HStack
+            border="2px"
+            borderColor="yellow.400"
+            h="full"
+            p="3"
+            flexGrow="1"
+          >
+            <Box>
+              <AiOutlineClockCircle />
+            </Box>
+            <Flex w="full">
+              <Box w="full">
+                <Select value="01">
+                  {data.hours.map((el) => (
+                    <option key={el} value={el}>
+                      {el}
+                    </option>
+                  ))}
+                </Select>
               </Box>
-              <Flex>
-                <Box>{hr}</Box>
-                <Box>{min}</Box>
-              </Flex>
-            </HStack>
-            <HStack w="full" border="2px" borderColor="yellow.400" h="100%">
-              <Box>
-                <BsPersonFill />
+              <Box w="full">
+                <Select value={"00"}>
+                  {data.minutes.map((el) => (
+                    <option key={el} value={el}>
+                      {el}
+                    </option>
+                  ))}
+                </Select>
               </Box>
-              <Select placeholder="Passengers" w="full">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </Select>
-            </HStack>
-          </Grid>
+            </Flex>
+          </HStack>
         </GridItem>
         <GridItem
           // w="full"
