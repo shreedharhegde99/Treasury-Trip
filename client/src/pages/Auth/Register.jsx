@@ -2,16 +2,17 @@ import {
   Box,
   Button,
   Heading,
+  Hide,
   Image,
   Input,
   InputGroup,
   InputRightElement,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../../Firebase/firebase";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {auth} from "../../Firebase/firebase";
 import Medium from "./Medium";
 
 const obj = {
@@ -28,11 +29,11 @@ const Register = () => {
 
   const handleChange = (e) => {
     // console.log(e.target);
-    const { name, value } = e.target;
-    setText({ ...text, [name]: value });
+    const {name, value} = e.target;
+    setText({...text, [name]: value});
   };
 
-  const { email, password } = text;
+  const {email, password} = text;
 
   const handleSubmit = () => {
     if (email !== "" && password !== "") {
@@ -76,12 +77,11 @@ const Register = () => {
     }
   };
 
-
   return (
     <>
       <Box
         // border={"1px solid"}
-        w="100%"
+        bg="#FAFAFA"
         m="auto"
         display={"flex"}
         flexDir={["column", "column", "row"]}
@@ -89,12 +89,15 @@ const Register = () => {
         alignItems={"center"}
       >
         <Box
+        
           p="20px 0px"
           w={["100%", "70%", "70%", "45%"]}
           mt={[1, 2, 4, 10]}
           display="flex"
           flexDir={"column"}
+          alignItems="center"
           textAlign={"center"}
+        justifyContent="center"
           bg="whiteAlpha.700"
           // border={"1px solid"}
           borderRadius={7}
@@ -144,10 +147,13 @@ const Register = () => {
           <Medium />
         </Box>
         <Box>
-          <Image
-            objectFit={"cover"}
-            src="https://images.pexels.com/photos/3643925/pexels-photo-3643925.jpeg?auto=compress&cs=tinysrgb&w=600"
-          />
+          <Hide breakpoint="(max-width: 600px)">
+            <Image
+              // objectFit={"cover"}
+
+              src="https://img.freepik.com/free-photo/what-are-you-waiting-sign-up-now-confident-determined-happy-friendlylooking-attractive-woman-yellow-tshirt-pointing-upper-left-corner-advice-buy-black-friday-sale-smiling-pleased_176420-50940.jpg?w=1060&t=st=1668331858~exp=1668332458~hmac=baaa0c243e3a6203272bc319875fdf0b7e67b4a9d347a7281a0743cb05d1e720"
+            />
+          </Hide>
         </Box>
       </Box>
     </>

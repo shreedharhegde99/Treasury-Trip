@@ -127,5 +127,5 @@ export default function LargeWithNewsletter() {
         </SimpleGrid>
       </Container>
     </Box>
-  );
+  )
 }

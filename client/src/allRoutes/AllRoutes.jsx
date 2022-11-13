@@ -3,7 +3,6 @@ import ListLanding from "../components/Attraction/ListLanding";
 import AirportTaxi from "../pages/AirportTaxis";
 import Attractions from "../pages/Attractions";
 import Logging from "../pages/Auth/Logging";
-// import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
 import {Flights} from "../pages/Flights";
 import {FlightSearch} from "../pages/FlightSearch";

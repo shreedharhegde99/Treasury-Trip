@@ -12,7 +12,7 @@ function App() {
       <AllRoutes />
       <FooterSm />
     </div>
-  );
+  )
 }
 
 export default App;
