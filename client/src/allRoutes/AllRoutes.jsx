@@ -10,7 +10,7 @@ import {PersonalDetails} from "../pages/PersonalDetails";
 import Stays from "../pages/Stays";
 import { Ticket } from "../pages/Ticket";
 import AirportTaxiResults from "../pages/AirportTaxiResults";
-import AirportTaxiCheckout from "../pages/AirportTaxiCheckout";
+// import AirportTaxiCheckout from "../pages/AirportTaxiCheckout";
 import List from "../pages/list/List";
 import PrivateRoute from "./PrivateRoute";
 import ListLanding from "../components/Attraction/ListLanding";

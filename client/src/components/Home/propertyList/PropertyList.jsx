@@ -1,4 +1,5 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+// import { SimpleGrid, Text } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import "./PropertyList.css";
 
 const PropertyList = () => {

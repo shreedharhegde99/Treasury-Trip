@@ -1,7 +1,8 @@
 import React, { useEffect,useState} from "react";
-import { Center, Container, HStack, Stack, VStack } from "@chakra-ui/react";
+// import { Center, Container, HStack, Stack, VStack } from "@chakra-ui/react";
+import { Center, Container, Stack, VStack } from "@chakra-ui/react";
 import { Searchflight } from "../components/FlightSearch/Searchflight";
-import Data from "../assets/flightsdata.json"
+// import Data from "../assets/flightsdata.json"
 import { SearchCard } from "../components/FlightSearch/SearchCard";
 import { FlightFilter } from "../components/FlightSearch/FlightFilter";
 import { useSearchParams } from "react-router-dom";

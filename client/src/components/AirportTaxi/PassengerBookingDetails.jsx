@@ -1,14 +1,10 @@
 import { Box, Button, Text, Divider } from "@chakra-ui/react";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function PassengerBookingDetails({ price }) {
   const {
     from,
     to,
-    date,
-    hours,
-    mins,
     price: storePrice,
   } = useSelector((state) => state.taxiData);
 

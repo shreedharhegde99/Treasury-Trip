@@ -1,4 +1,5 @@
-import { Box, Button,Center, Container, Heading, Image,Text,Stack, VStack } from '@chakra-ui/react'
+// import { Box, Button,Center, Container, Heading, Image,Text,Stack, VStack } from '@chakra-ui/react'
+import { Container, Heading, Text ,VStack } from '@chakra-ui/react'
 import React from 'react'
 import Header from '../Top/Header'
 
