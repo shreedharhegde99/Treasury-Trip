@@ -6,8 +6,8 @@ import { NavbarTop } from "./components/Navbar/NavbarTop";
 function App() {
   return <div>
     <NavbarTop />
-    <AllRoutes />
-<FooterDwn/>
+    <AllRoutes /> 
+  <FooterDwn/>
   </div>;
 }
 
