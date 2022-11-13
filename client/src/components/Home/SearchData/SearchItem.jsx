@@ -1,7 +1,8 @@
-import { Box, Text, useEnvironment } from '@chakra-ui/react'
+// import { Box,  SkeletonText, Text, useEnvironment } from '@chakra-ui/react'
+import {   SkeletonText,  } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import List from '../../../pages/list/List'
+// import List from '../../../pages/list/List'
 import './searchItem.css'
 const SearchItem = () => {
 const [data, setData] = useState([])
@@ -20,7 +21,9 @@ const [data, setData] = useState([])
   return (
   
   <>
+    <SkeletonText noOfLines={25} spacing="8" isLoaded={data.length>0} fadeDuration={500} />
  {
+
     data?.map((ele)=>(
         <div className="searchItem" key='ele.id'>
         <img

@@ -4,9 +4,9 @@ import SubscribeLetter from "../../components/AirportTaxi/SubscribeLetter";
 import FeaturedProperties from "../../components/Home/FeaturedPropertes/FeaturedProperties";
 import Featured from "../../components/Home/Header/Featured";
 import Images from "../../components/Home/Image/Images";
-import MailList from "../../components/Home/MaiList/MailList";
+// import MailList from "../../components/Home/MaiList/MailList";
 import PropertyList from "../../components/Home/propertyList/PropertyList";
-import Header from "../../components/Home/Top/Header";
+// import Header from "../../components/Home/Top/Header";
 import "./Home.css";
 export default function Home() {
   return (

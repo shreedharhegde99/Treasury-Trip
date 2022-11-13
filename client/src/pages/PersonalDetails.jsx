@@ -1,6 +1,7 @@
-import { Container,Heading, Stack,Center } from "@chakra-ui/react";
+// import { Container,Heading, Stack,Center } from "@chakra-ui/react";
+import {  Stack,Center } from "@chakra-ui/react";
 import React,{useEffect,useState} from "react";
-import {GiDirectionSigns} from "react-icons/gi"
+// import {GiDirectionSigns} from "react-icons/gi"
 import { Cart } from "../components/Personaldetails/Cart";
 import { Contactdetails } from "../components/Personaldetails/Contactdetails";
 import { useSearchParams } from "react-router-dom";

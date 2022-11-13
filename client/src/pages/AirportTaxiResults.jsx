@@ -11,7 +11,7 @@ import {
 import CoronaAlert from "../components/AirportTaxi/CoronaAlert";
 import PassengerBookingDetails from "../components/AirportTaxi/PassengerBookingDetails";
 import PassengerDetails from "../components/AirportTaxi/PassengerDetails";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function AirportTaxiResults() {

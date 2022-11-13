@@ -1,13 +1,14 @@
 import "./list.css";
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
-import { format } from "date-fns";
-import { DateRange } from "react-date-range";
+// import { useLocation } from "react-router-dom";
+// import { useState } from "react";
+// import { format } from "date-fns";
+// import { DateRange } from "react-date-range";
 import SearchItem from "../../components/Home/SearchData/SearchItem";
-import { div } from "@chakra-ui/react";
+import NavbarR from "../../components/Navbar/NavbarR";
+// import { div } from "@chakra-ui/react";
 
 const List = () => {
-  const location = useLocation();
+  // const location = useLocation();
   // const [destination, setDestination] = useState(location.state.destination);
   // const [date, setDate] = useState(location.state.date);
   // const [openDate, setOpenDate] = useState(false);
@@ -15,7 +16,7 @@ const List = () => {
 
   return (
     <div>
-     
+     <NavbarR/>
       <div className="listContainer" columns={{base:1,sm:2}}>
         <div className="listWrapper"  >
           

@@ -11,21 +11,28 @@ import {
   Box,
   Heading,
 } from "@chakra-ui/react";
-import {EditIcon, HamburgerIcon, UnlockIcon} from "@chakra-ui/icons";
-import {Link, useNavigate} from "react-router-dom";
-import {IoIosBed} from "react-icons/io";
-import {MdFlightTakeoff} from "react-icons/md";
-import {FaPlaceOfWorship, FaTaxi} from "react-icons/fa";
-import {useDispatch, useSelector} from "react-redux";
-import {isNotAuth} from "../../redux/auth/auth.actions";
+import { EditIcon, HamburgerIcon, UnlockIcon } from "@chakra-ui/icons";
+import { Link, useNavigate } from "react-router-dom";
+import { IoIosBed } from "react-icons/io";
+import { MdFlightTakeoff } from "react-icons/md";
+import { FaPlaceOfWorship, FaTaxi } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { isNotAuth } from "../../redux/auth/auth.actions";
 
 const MenuBar = () => {
-  const {isOpen, onOpen, onClose} = useDisclosure();
-  const {login} = useSelector((store) => store.Authentication);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { login } = useSelector((store) => store.Authentication);
   let changingBtn;
-  {
-    login ? (changingBtn = "Logout") : (changingBtn = "Login");
+
+  if (login) {
+    changingBtn = "Logout";
+  } else {
+    changingBtn = "Login";
   }
+
+  // {
+  //   login ? (changingBtn = "Logout") : (changingBtn = "Login");
+  // }
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

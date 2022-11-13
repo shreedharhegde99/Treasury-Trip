@@ -8,20 +8,23 @@ import {
   InputLeftElement,
   Stack,
 } from "@chakra-ui/react";
-import {FiSearch} from "react-icons/fi";
-import {BiChevronRight} from "react-icons/bi";
-import {BsCalendarCheck} from "react-icons/bs";
-import {Tabs, TabList, Tab} from "@chakra-ui/react";
+import { FiSearch } from "react-icons/fi";
+import { BiChevronRight } from "react-icons/bi";
+import { BsCalendarCheck } from "react-icons/bs";
+import { Tabs, TabList, Tab } from "@chakra-ui/react";
 import "./ListLanding.css";
-import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {getCityData, loaded} from "../../redux/attractions/attractions.action";
-import {Navigate, useParams} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getCityData,
+  loaded,
+} from "../../redux/attractions/attractions.action";
+import { Navigate, useParams } from "react-router-dom";
 import NavbarR from "../Navbar/NavbarR";
 export default function ListLanding() {
-  const {cityData, dataLoaded} = useSelector((state) => state.attraction);
+  const { cityData, dataLoaded } = useSelector((state) => state.attraction);
   const [data, setData] = useState(cityData);
-  const {city} = useParams();
+  const { city } = useParams();
   const [citySearch, setCitySearch] = useState(city);
 
   const dispatch = useDispatch();
@@ -50,8 +53,8 @@ export default function ListLanding() {
 
   const sortLowToHigh = () => {
     let updatedData = [...data].sort((a, b) => {
-      let [Rs, price] = a.price.trim().split(".");
-      let [rs, prices] = b.price.trim().split(".");
+      let price = a.price.trim().split(".")[1];
+      let prices = b.price.trim().split(".")[1];
       price = price.split(",").join("");
       prices = prices.split(",").join("");
       // console.log(Number(price),Number(prices))
@@ -63,8 +66,8 @@ export default function ListLanding() {
 
   const highToLow = () => {
     let updatedData = [...data].sort((a, b) => {
-      let [Rs, price] = a.price.trim().split(".");
-      let [rs, prices] = b.price.trim().split(".");
+      let  price = a.price.trim().split(".")[1];
+      let  prices = b.price.trim().split(".")[1];
       price = price.split(",").join("");
       prices = prices.split(",").join("");
       // console.log(Number(price),Number(prices))
@@ -77,7 +80,11 @@ export default function ListLanding() {
   return (
     <Box>
       <NavbarR />
-      <Box ml={"10%"} pt={"3%"} style={{fontWeight: "bold", fontSize: "25px"}}>
+      <Box
+        ml={"10%"}
+        pt={"3%"}
+        style={{ fontWeight: "bold", fontSize: "25px" }}
+      >
         {getCity(city)} Attractions
       </Box>
       <HStack align={"start"}>
@@ -115,11 +122,13 @@ export default function ListLanding() {
             borderRadius={"10px"}
             pl="5%"
           >
-            <h1 style={{fontWeight: "bold", fontSize: "16px", marginTop: "5%"}}>
+            <h1
+              style={{ fontWeight: "bold", fontSize: "16px", marginTop: "5%" }}
+            >
               Filter
             </h1>
             <br />
-            <hr style={{marginLeft: "-5%"}} />
+            <hr style={{ marginLeft: "-5%" }} />
             <h1
               style={{
                 fontWeight: "500",
@@ -225,7 +234,7 @@ export default function ListLanding() {
                         >
                           {el.city.toUpperCase()}
                         </p>
-                        <h1 style={{fontWeight: "bold", fontSize: "20px"}}>
+                        <h1 style={{ fontWeight: "bold", fontSize: "20px" }}>
                           {el.title}
                         </h1>
                         <p
@@ -238,7 +247,7 @@ export default function ListLanding() {
                           {el.desc}
                         </p>
                         {/* <Box style={{color:'#1A1A1A',fontSize:'14px',marginBottom:'2px'}}><HStack><MdTimer/>{el.duration}?<p>Duration 2 hours</p>:''</HStack></Box> */}
-                        <Box style={{fontSize: "14px", color: "#008234"}}>
+                        <Box style={{ fontSize: "14px", color: "#008234" }}>
                           <HStack>
                             <BsCalendarCheck /> <p>{el.cancellation}</p>
                           </HStack>

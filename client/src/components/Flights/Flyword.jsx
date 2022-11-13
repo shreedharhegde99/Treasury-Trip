@@ -25,7 +25,7 @@ export const Flyword = () => {
       img: "https://q-xx.bstatic.com/xdata/images/city/square210/619923.jpg?k=4fb13225390240a51ee5aa1d76318d03dc0de8a046ddc06e4598f17b287bdcc9&o=",
     },
   ];
-  const europe = [];
+  // const europe = [];
   const Northamerica = [
     {
       desc: "Shortest flight time 15h 02m",
@@ -50,7 +50,7 @@ export const Flyword = () => {
       img: "https://q-xx.bstatic.com/xdata/images/city/square210/953846.jpg?k=29f1aa324a747187330b2a8790c799118ef5b22185a0a235a3ab5117f8495006&o=",
     },
   ];
-  const oceania = [];
+  // const oceania = [];
 
   return (
     <Container

@@ -1,13 +1,15 @@
-import { Container, HStack,Stack, Text, VStack ,Image, Heading, Button,} from "@chakra-ui/react"
+import { Stack, Text, VStack ,Image, Heading, Button,} from "@chakra-ui/react"
+// import { Container, HStack,Stack, Text, VStack ,Image, Heading, Button,} from "@chakra-ui/react"
 import React from "react"
 import flightitem from "../../assets/flightitem.jpg"
 import airindia from "../../assets/airindia.jpg"
-import { useNavigate, useSearchParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+// import { useNavigate, useSearchParams } from "react-router-dom"
 
 export const SearchCard=(props)=>{
     const {arrive,departure,loc1,loc2,_id,duration,airline} = props.data
     const date=new Date()
-    const[params,setparams]=useSearchParams()
+    // const[params,setparams]=useSearchParams()
     const today=date.getDate()
     let prc=Math.floor(Math.random() * 1000)+1500;
 
@@ -20,7 +22,8 @@ export const SearchCard=(props)=>{
         </VStack>
         <VStack>
             <Text>{departure}</Text>
-            <Text>{loc1+"-" +today +" "+"Nov"}</Text>
+            {/* <Text>{loc1+"-" +today +" "+"Nov"}</Text> */}
+            <Text>{`${loc1}-${today} Nov`}</Text>
         </VStack>
         <VStack>
             <Text>{duration}</Text>
@@ -28,14 +31,16 @@ export const SearchCard=(props)=>{
         </VStack>
         <VStack>
             <Text>{arrive}</Text>
-            <Text>{loc2+"-"+today +" "+ "Nov"}</Text>
+            {/* <Text>{loc2+"-"+today +" "+ "Nov"}</Text> */}
+            <Text>{`${loc2}-${today} Nov`}</Text>
         </VStack>
 
 
 
             <VStack>
                     <Image src={flightitem} mr="-20px" />
-                    <Heading fontSize={"20px"} minW="100%" textAlign={{base:"center",md:"right"}}>{"₹ "+" "+prc}</Heading>
+                    {/* <Heading fontSize={"20px"} minW="100%" textAlign={{base:"center",md:"right"}}>{"₹ "+" "+prc}</Heading> */}
+                    <Heading fontSize={"20px"} minW="100%" textAlign={{base:"center",md:"right"}}>{`₹ ${prc}`}</Heading>
                     <Text minW="100%" textAlign={{base:"center",md:"right"}}>Total price for all travelers</Text>
                     <Button  onClick={()=>{navigate(`/flights/book/flight?id=${_id}&prc=${prc}`)}} colorScheme={"telegram"} minW={"100%"}>Select Flight</Button>
             </VStack>

@@ -24,7 +24,7 @@ import { IoMdThumbsUp } from "react-icons/io";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setPrice } from "../../redux/taxis/taxis.action";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function PassengerDetails({ markPrice, price }) {
   const [selected, setSelected] = useState("Standard");
@@ -64,7 +64,7 @@ export default function PassengerDetails({ markPrice, price }) {
           "We've created a ride for you. Please send the payment from provided contact number",
         status: "success",
         duration: 5000,
-        position:"top",
+        position: "top",
         isClosable: true,
       });
       setTimeout(() => navigate("/"), 5000);

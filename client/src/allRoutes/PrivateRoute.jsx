@@ -1,5 +1,5 @@
 import {useToast} from "@chakra-ui/react";
-import React, {useEffect} from "react";
+import  {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
@@ -10,7 +10,6 @@ const PrivateRoute = ({children}) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!login) {
-      navigate("/");
       toast({
         title: "Login first",
         position: "top-right",
@@ -18,6 +17,9 @@ const PrivateRoute = ({children}) => {
         duration: 2000,
         isClosable: true,
       });
+      setTimeout(()=>{
+        navigate("/login");
+      },3000)
     }
   }, [login]);
 

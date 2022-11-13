@@ -16,7 +16,7 @@ import {
 import { Fragment, useEffect, useState } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { BsPersonFill } from "react-icons/bs";
+// import { BsPersonFill } from "react-icons/bs";
 import { RiPlaneFill } from "react-icons/ri";
 import { GrCreditCard } from "react-icons/gr";
 import { GoCheck } from "react-icons/go";
