@@ -9,6 +9,8 @@ import NotFound from "../pages/NotFound";
 import {PersonalDetails} from "../pages/PersonalDetails";
 import Stays from "../pages/Stays";
 import { Ticket } from "../pages/Ticket";
+import AirportTaxiResults from "../pages/AirportTaxiResults";
+import AirportTaxiCheckout from "../pages/AirportTaxiCheckout";
 import List from "../pages/list/List";
 import PrivateRoute from "./PrivateRoute";
 import ListLanding from "../components/Attraction/ListLanding";
@@ -24,6 +26,11 @@ export default function AllRoutes() {
       <Route path="/attractions/:city" element={<ListLanding />} />
       <Route path="/invoice/:id" element={<Ticket />} />
       <Route path="/taxis" element={<AirportTaxi />} />
+      <Route path="/taxis/taxi-search" element={<AirportTaxiResults />} />
+      {/* <Route
+        path="/taxis/taxi-search/checkout"
+        element={<AirportTaxiCheckout />}
+      /> */}
       <Route path="/login" element={<Logging />} />
       <Route path="/register" element={<Register />} />
       <Route path="/flights/search/:myway" element={<FlightSearch />} />
