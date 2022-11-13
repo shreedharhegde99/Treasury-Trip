@@ -1,9 +1,10 @@
 import { Box, Hide } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillCar } from "react-icons/ai";
 import { FaPlaceOfWorship, FaTaxi } from "react-icons/fa";
 import { IoIosBed } from "react-icons/io";
 import { MdFlightTakeoff } from "react-icons/md";
+import { useLocation } from "react-router-dom";
 import NavbarButton from "./NavbarButton";
 
 const NavbarR = () => {

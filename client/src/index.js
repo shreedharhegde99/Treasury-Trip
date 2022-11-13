@@ -15,7 +15,7 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <GoogleOAuthProvider clientId="530099635609-9mdidp54usq2kb8lad34okj8coo2bfq7.apps.googleusercontent.com"><App /></GoogleOAuthProvider>;
-        
+
       </BrowserRouter>
     </Provider>
   </ChakraProvider>
