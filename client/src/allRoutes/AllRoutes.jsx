@@ -10,9 +10,11 @@ import NotFound from "../pages/NotFound";
 import { PersonalDetails } from "../pages/PersonalDetails";
 import Stays from "../pages/Stays";
 
+
 // import PrivateRoute from "./PrivateRoute";
 import { Ticket } from "../pages/Ticket";
 import Airport_Taxi from "../pages/AirportTaxis";
+import List from "../pages/list/List";
 
 export default function AllRoutes() {
   return (
@@ -29,6 +31,7 @@ export default function AllRoutes() {
       <Route path="/flights/search/:myway" element={<FlightSearch />} />
       <Route path="/flights/book/:id" element={<PersonalDetails />} />
       <Route path="/car-rentals" element={<NotFound />} />
+      <Route path="/hotels/:id" element={<List/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
