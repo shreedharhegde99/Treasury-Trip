@@ -11,15 +11,9 @@ import {PersonalDetails} from "../pages/PersonalDetails";
 import Stays from "../pages/Stays";
 
 
-import { Ticket } from "../pages/Ticket";
-
-
-
-
 import PrivateRoute from "./PrivateRoute";
 import { Ticket } from "../pages/Ticket";
 import Airport_Taxi from "../pages/AirportTaxis"
-import ListLanding from "../components/Attraction/ListLanding";
 
 
 export default function AllRoutes() {
