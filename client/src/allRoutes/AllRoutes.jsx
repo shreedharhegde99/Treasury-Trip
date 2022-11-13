@@ -22,6 +22,8 @@ export default function AllRoutes() {
       <Route path="/stays" element={<Stays />} />
       <Route path="/flights" element={<Flights />} />
       <Route path="/attractions" element={<Attractions />} />
+      <Route path="/attractions/:city" element={<ListLanding />} />
+      
       <Route path="/taxis" element={<Airport_Taxi />} />
       <Route path="/login" element={<Login/>} />
 
