@@ -4,8 +4,8 @@ import React from "react";
 export const FlightCard = (props) => {
     const { image, title, desc } = props
     return (
-        <Stack>
-            <Image minW={"280px"} maxW="280px" minH={"170px"} maxH="170px" src={image} alt={title} />
+        <Stack _focus={{bgColor:"black"}}>
+            <Image minW={{base:"80vw",md:"280px"}}  maxW={{base:"100%",md:"280px"}} minH={{base:"200px",md:"170px"}} maxH={{base:"200px",md:"170px"}} src={image} alt={title} />
             <Heading as='h4' fontSize={"17px"}>
                 {title}
             </Heading>

@@ -1,16 +1,13 @@
 import AllRoutes from "./allRoutes/AllRoutes";
 import "./App.css";
-import { NavbarTop } from "./components/NavbarTop";
-import Hotel from "./pages/hotel/Hotel";
-import List from "./pages/list/List";
+import FooterDwn from "./components/Footers/FooterDwn";
+import { NavbarTop } from "./components/Navbar/NavbarTop";
 
 function App() {
   return <div>
     <NavbarTop />
     <AllRoutes /> 
-
-    {/* <List/> */}
-  
+  <FooterDwn/>
   </div>;
 }
 
