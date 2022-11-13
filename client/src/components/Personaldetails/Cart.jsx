@@ -5,7 +5,7 @@ import { GrAddCircle } from "react-icons/gr"
 import { FaMinusSquare } from "react-icons/fa"
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-export const Cart = ({details,data,setdata}) => {
+export const Cart = ({details}) => {
     const toast=useToast()
     const[ticket,setTicket]=useState(1)
     const[params,setparams]=useSearchParams()
@@ -13,22 +13,8 @@ export const Cart = ({details,data,setdata}) => {
    
     let prc=params.get("prc")
     const id=params.get("id")
-    
-   
 
-    const getdata=async()=>{
-        let resp=await fetch(`https://treasury-trip.up.railway.app/flights/${id}`)
-        let datar=await resp.json()
-        let price=datar.prc.slice(3)
-        console.log(price)
-        setdata({...datar,prc:price})
-           
 
-    }
-useEffect(()=>{
-    getdata()
- 
-},[])
     const handlecheckout=()=>{
         if(details.name.length>1&&details.email.length>1&&details.ph.length>0){
             toast({

@@ -12,9 +12,9 @@ export default function AirportTaxi() {
   return (
     <Fragment>
       <NavbarR />
-      <BookYourTaxi  reference={inputRef}/>
+      <BookYourTaxi  />
       <AirportTransferDetail />
-      <AirportTaxiKinds reference={inputRef} />
+      <AirportTaxiKinds  />
       <TaxiFaq />
       <DownloadApp />
       <SubscribeLetter />
