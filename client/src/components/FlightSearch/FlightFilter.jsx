@@ -2,7 +2,7 @@ import { Container, VStack,Heading,Text,Radio,Stack, RadioGroup, SliderTrack, Sl
 import React from "react";
 
 export const FlightFilter=(props)=>{
-  const{fdata,rdata,}=props
+  const{fdata,rdata,filldata}=props
   const handlefilter=(e)=>{
     if(e.target.checked){
         const newarr=fdata.filter((el)=>{
@@ -36,7 +36,7 @@ export const FlightFilter=(props)=>{
 
       rdata(newarr)
   }else{
-    rdata(fdata)
+    rdata([...filldata])
   }
   }
 

@@ -14,8 +14,8 @@ export const FlightSearch = () => {
     const getdata=async()=>{
         const resp=await fetch(`https://treasury-trip.up.railway.app/flights?from=${depart}&to=${arrive}`)
         const data=await resp.json();
-        setflightdata(data[0].data)
-        setrflightdata(data[0].data)
+        setflightdata(data)
+        setrflightdata(data)
         console.log(data)
         
 
@@ -30,7 +30,7 @@ export const FlightSearch = () => {
           <Container minW={"100%"} padding={{base:"10px",md:"40px"}}>
            <Searchflight />
             <Stack padding={{base:"0px",md:"15px"}} justifyContent={"space-between"}  direction={{base:"column",md:"row"}}>
-                <FlightFilter  rdata={setflightdata} fdata={rflightdata} />
+                <FlightFilter fildata={flightdata}  rdata={setflightdata} fdata={rflightdata} />
                <VStack overflow={"scroll"} maxH="700px" spacing={"20px"}>
                {flightdata?flightdata.map((e) => {
                     return <SearchCard  data={e} />
