@@ -7,7 +7,6 @@ const Attractions = () => {
     <div>
       <NavbarR />
       <AttractionsPage />
-      {/* <ListLanding/> */}
     </div>
   );
 };

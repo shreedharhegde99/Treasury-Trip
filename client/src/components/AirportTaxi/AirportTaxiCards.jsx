@@ -10,7 +10,17 @@ export default function AirportTaxiCards({
   bags,
   included,
   cancellation,
+  reference,
 }) {
+  function handleScroll() {
+    window.scroll({
+      behavior: "smooth",
+    });
+    reference.current.focus()
+  }
+     
+
+  console.log(reference.current);
   return (
     <Box p="4" border="1px" borderColor="black" minW="xs">
       <Box py="4">
@@ -19,7 +29,7 @@ export default function AirportTaxiCards({
         </Heading>
         <Text fontSize="sm">{vehicle}</Text>
       </Box>
-      <VStack align="start"  p="2">
+      <VStack align="start" p="2">
         <HStack>
           <Box>
             <BsFillPersonFill size="1rem" />
@@ -46,7 +56,13 @@ export default function AirportTaxiCards({
           <Box color="green">{cancellation}</Box>
         </HStack>
       </VStack>
-      <Button variant="solid" colorScheme="telegram" w="16" h="8">
+      <Button
+        variant="solid"
+        colorScheme="telegram"
+        w="16"
+        h="8"
+        onClick={handleScroll}
+      >
         Search
       </Button>
     </Box>

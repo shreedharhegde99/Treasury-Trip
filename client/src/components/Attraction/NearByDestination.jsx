@@ -5,15 +5,7 @@ import {GiTreeDoor} from "react-icons/gi"
 import {BsCalendarCheck} from "react-icons/bs"
 import {FaHeadset}from "react-icons/fa"
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
-import Africa from "./exploreMoreDestination/Africa";
-import Caribbean from "./exploreMoreDestination/Caribbean";
-import CentralAmerica from "./exploreMoreDestination/CentralAmerica";
-import Oceania from "./exploreMoreDestination/Oceania";
-import Europe from "./exploreMoreDestination/Europe";
-import MiddleEast from "./exploreMoreDestination/MiddelEast";
-import NorthAmerica from "./exploreMoreDestination/NorthAmerica";
-import SouthAmerica from "./exploreMoreDestination/SouthAmerica";
-import Asia from "./exploreMoreDestination/Asia";
+import CityCards from "./exploreMoreDestination/CityCards";
 
 export default function NearByDestination() {
     return (
@@ -103,18 +95,18 @@ export default function NearByDestination() {
                     <Tab>Central America</Tab>
                 </TabList>
                 <TabPanels>
-                    <TabPanel><Europe/></TabPanel>
-                    <TabPanel><NorthAmerica/></TabPanel>
-                    <TabPanel><Asia/></TabPanel>
-                    <TabPanel><Africa/></TabPanel>
-                    <TabPanel><Oceania/></TabPanel>
-                    <TabPanel><MiddleEast/></TabPanel>
-                    <TabPanel><SouthAmerica/></TabPanel>
-                    <TabPanel><Caribbean/></TabPanel>
-                    <TabPanel><CentralAmerica/></TabPanel>
+                    <TabPanel><CityCards country='europe'/></TabPanel>
+                    <TabPanel><CityCards country='america'/></TabPanel>
+                    <TabPanel><CityCards country='asia'/></TabPanel>
+                    <TabPanel><CityCards country='africa'/></TabPanel>
+                    <TabPanel><CityCards country='oceania'/></TabPanel>
+                    <TabPanel><CityCards country='middleeast'/></TabPanel>
+                    <TabPanel><CityCards country='southamerica'/></TabPanel>
+                    <TabPanel><CityCards country='caribbean'/></TabPanel>
+                    <TabPanel><CityCards country='centralamerica'/></TabPanel>
                 </TabPanels>
             </Tabs>
-                                  
+              <br />                    
         </>
     )
 }
