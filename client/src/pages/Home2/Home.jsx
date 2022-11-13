@@ -1,3 +1,4 @@
+import { Box, Text } from '@chakra-ui/react'
 import React from 'react'
 import FeaturedProperties from '../../components/Home/FeaturedPropertes/FeaturedProperties'
 import Featured from '../../components/Home/Header/Featured'
@@ -16,10 +17,14 @@ export default function Home() {
       <Images/>
       <div className="homeContainer">
         <Featured/>
-         <h1 className="homeTitle">Browse by property type</h1>
+        <Box width={"100%"}>
+        <Text fontSize={"2xl"} marginBottom='30px' marginLeft={"70px"}>  Browse by property type</Text>
         <PropertyList/>
-        <h1 className="homeTitle">Homes guests love</h1>
+        </Box>
+        <Box >
+        <Text fontSize={"2xl"} marginBottom='30px' marginLeft={"70px"}>Homes guests love</Text>
         <FeaturedProperties/>
+        </Box>
         <MailList/>
         
       </div>

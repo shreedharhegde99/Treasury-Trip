@@ -125,7 +125,7 @@ console.log(search)
                 )}
               </div>
               {/* <Divider orientation="vertical" color='yellow.500' size='50px'/> */}
-              <div className="headerSearchItem" style={{border:"2px solid black"}}>
+              <div className="headerSearchItem" >
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
@@ -215,7 +215,6 @@ console.log(search)
       <Box 
       w={"20%"}
        h="auto" 
-       border={"1px solid white"}
         mt={"-10px"}
         marginLeft={"100px"}
         textAlign={"center"}
