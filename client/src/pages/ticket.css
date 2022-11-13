@@ -1,0 +1,168 @@
+
+  .bold {
+    font-weight: 700;
+  }
+  
+  .container {
+    padding: 3rem 4rem;
+    background-image: url("https://media.istockphoto.com/id/1150104511/vector/flat-style-vector-illustration-of-the-airliner-at-the-airport.jpg?s=612x612&w=0&k=20&c=xI48rotewtZwdX_B3IZCPikOZPtVKbiwqUZuZV_KjkE=");
+    background-size: cover;
+  }
+  
+  .header {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+  }
+  
+  .brand {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  
+  .brand__logo img {
+    height: 3rem;
+  }
+  
+  .brand__heading {
+    color: rgb(51,91,178);
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  
+  .details {
+    display: flex;
+    margin: 3rem 0;
+    margin-left: 1rem;
+  }
+  
+  .details__column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  .details__column-grid {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0.5rem 0;
+    color: black;
+  }
+  
+  .details__column-grid div:first-child {
+    width: 135px;
+  }
+  
+  .details__column:last-child .details__column-grid div:first-child {
+    width: 115px;
+  }
+  .details__gap {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    align-self: stretch;
+  }
+  
+  .details__column-item {
+    font-size: 1.2rem;
+    background-color: rgb(51,91,178);
+    border-radius: 4px;
+    color: white;
+  
+
+  }
+  
+  .breakdown {
+    background: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .breakdown__item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #f0f0f0;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-right: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .breakdown__item:first-child,
+  .breakdown__item:last-child {
+    border-top: none;
+  }
+  
+  .refund {
+    color: #ec5423;
+  }
+  
+  .total {
+    background: rgb(89,115,166);
+    color: #fff;
+  }
+  
+  @media screen and (max-width: 450px) {
+    html {
+      font-size: 9px;
+    }
+    .container {
+      padding: 1.5rem;
+    }
+    .details {
+      flex-direction: column;
+    }
+    .details__column-grid {
+      width: 100%;
+      grid-template-columns: 1fr auto 1fr;
+    }
+    .details__gap {
+      height: 1rem;
+    }
+  }
+  
+  @media screen and (min-width: 450px) {
+    html {
+      font-size: 9px;
+    }
+    .container {
+      padding: 2rem;
+    }
+    .details__column-grid {
+      grid-gap: 0.8rem 0.5rem;
+    }
+    .details__gap {
+      width: 1rem;
+    }
+    .details__column-item,
+    .breakdown__item {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    html {
+      font-size: 10px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    html {
+      font-size: 12px;
+    }
+    .details__gap {
+      width: 2rem;
+    }
+  }
+  
+  @media screen and (min-width: 1064px) {
+    html {
+      font-size: 16px;
+    }
+    .details__gap {
+      width: 2.5rem;
+    }
+  }
+  
