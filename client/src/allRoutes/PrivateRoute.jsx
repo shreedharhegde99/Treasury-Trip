@@ -8,7 +8,7 @@ const PrivateRoute = ({children}) => {
   const toast = useToast();
 
   const navigate = useNavigate();
-  useEffect(() => {
+
     if (!login) {
       toast({
         title: "Login first",
@@ -20,10 +20,12 @@ const PrivateRoute = ({children}) => {
       setTimeout(()=>{
         navigate("/login");
       },3000)
+    }else{
+      return children
     }
-  }, [login]);
 
-  return (children);
+
+
 };
 
 export default PrivateRoute;
