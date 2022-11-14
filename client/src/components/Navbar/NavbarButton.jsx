@@ -7,7 +7,7 @@ export default function NavbarButton({ active, setActive, text, icon, link }) {
     <Link to={`/${link}`}>
       <Box
         border="2px"
-        borderColor={`${active === link ? "white" : "teal"}`}
+        borderColor={`${active === link ? "white" : "white"}`}
         borderRadius="full"
         p="2"
         minW="max-content"
