@@ -1,5 +1,6 @@
 import AllRoutes from "./allRoutes/AllRoutes";
 import "./App.css";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 import FooterSm from "./components/Footers/Another/FooterSm";
 
@@ -11,6 +12,7 @@ function App() {
       <NavbarTop />
       <AllRoutes />
       <FooterSm />
+      <ScrollToTop/>
     </div>
   )
 }
