@@ -1,4 +1,4 @@
-import {Box, Button, HStack, Input,InputGroup,InputLeftElement} from '@chakra-ui/react'
+import {Box, Button, Input,InputGroup,InputLeftElement, Stack} from '@chakra-ui/react'
 import {GiTreeDoor} from "react-icons/gi"
 import { FaInfoCircle } from "react-icons/fa";
 import NearByDestination from './NearByDestination';
@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux"
 import { getCityData, loaded } from '../../redux/attractions/attractions.action';
 import { useNavigate } from 'react-router-dom';
 
-const cityArray=['MUMBAI','BANGALORE','DELHI','KOLKATA','AHMEDABAD','GOA']
+// const cityArray=['MUMBAI','BANGALORE','DELHI','KOLKATA','AHMEDABAD','GOA']
 
 export default function UpperSection() {
     const [text,setText]=useState('')
@@ -58,7 +58,7 @@ export default function UpperSection() {
            <Box bg='#F5F5F5' w='100%' h="auto" pb='20'>           
                  <h1 style={{fontSize:"30px",fontWeight:"bold",marginLeft:"20%",paddingTop:"30px"}}>Find and book a great experience</h1>
                  <p  style={{fontSize:"18px",color:"grey",marginLeft:"20%"}}>Discover more of your destination and make the most of your trip</p>
-                 <HStack  w="70%" style={{marginTop:"27px",marginLeft:"20%"}} position='relative'  >
+                 <Stack direction={'flex'}  w="70%" style={{marginTop:"27px",marginLeft:"20%"}} position='relative'  >
                     <InputGroup>
                     <InputLeftElement 
                         children={<GiTreeDoor color='gray.300' size="30px" />}
@@ -71,7 +71,7 @@ export default function UpperSection() {
                     </InputGroup>                   
                       <Input onChange={(e)=>setDate(e.target.value)} border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" placeholder='Select your dates' type="date" p="25px" pl="40px"/>                   
                    <Button onClick={handleSearch} border="4px" borderColor={"orange"} bg="#006CE4" color="white" p="25px 40px 25px 40px">Search</Button>
-                 </HStack>
+                 </Stack>
            </Box>
            <Box style={{borderRadius:"10px",border:"1px solid lightgrey",width:"80%",height:"80px",margin:"auto",marginTop:"40px"}}> 
             <p style={{marginLeft:"10%",paddingTop:"25px" ,display:"flex",gap:"20px"}}><FaInfoCircle color='brown' style={{marginTop:"5px",marginLeft:"-8%"}}/>Please check local guidelines before planning your visit.<span style={{color:"#4F6CE8",cursor:"pointer",marginLeft:"-15px"}}>Read more</span></p>
