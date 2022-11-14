@@ -17,19 +17,19 @@ export const BookFlight = () => {
     }
     return (
         <Container bgColor={"white"} borderRadius="10px" minW={"100%"} textAlign="left" p="20px" mb={"40px"}>
-            <Heading as='h3' size='lg' mt={"10px"}>
+            <Heading   fontSize={"32px"} mt={"10px"}>
                 Compare and book flights with ease
             </Heading>
-            <Text mt="20px" >Discover your next dream destination
+            <Text mt="20px" fontSize={"26px"}>Discover your next dream destination
 </Text>
             <RadioGroup onChange={setValue} value={value} mt="30px">
-                <Stack mt={"10px"} direction={{base:"column",md:"row"}} gap="20px">
+                <Stack fontSize={"22px"} mt={"10px"} direction={{base:"column",md:"row"}} gap="20px">
                     <HStack justifyContent={"space-evenly"}>
-                    <Radio value='1'>Round-Trip</Radio>
-                    <Radio value='2'>One Way</Radio>
-                    <Radio value='3'>Multi City</Radio>
+                    <Radio fontSize={"22px"} value='1'>Round-Trip</Radio>
+                    <Radio fontSize={"22px"} value='2'>One Way</Radio>
+                    <Radio  fontSize={"22px"}value='3'>Multi City</Radio>
                     </HStack>
-               <HStack justifyContent={"space-evenly"}>
+               <HStack fontSize={"22px"} justifyContent={"space-evenly"}>
                <Select  placeholder='Economy' width={"120px"} maxH="40px" variant='unstyled'>
                         <option value='option1'>Economy</option>
                         <option value='option2'>Premium</option>
@@ -37,7 +37,7 @@ export const BookFlight = () => {
                         <option value='option3'>First-Class</option>
                     </Select>
 
-                    <Select placeholder='1 person' width={"120px"} maxH="40px" variant='unstyled'>
+                    <Select fontSize={"22px"} placeholder='1 person' width={"120px"} maxH="40px" variant='unstyled'>
                         <option value='option1'>1 person</option>
                         <option value='option2'>2 person</option>
                         <option value='option3'>3 person</option>
@@ -46,12 +46,12 @@ export const BookFlight = () => {
                </HStack>
                 </Stack>
 
-                <Stack  shadow={"lg"} direction={{base:"column",md:"row"}} mt="20px" borderRadius={"5px"} bgColor={"rgb(0,136,204)"} p="10px">
+                <Stack fontSize={"22px"} shadow={"lg"} direction={{base:"column",md:"row"}} mt="20px" borderRadius={"5px"} bgColor={"rgb(0,136,204)"} p="10px">
                     <InputGroup bgColor={"white"}  borderRadius="10px">
                         <InputLeftAddon  minH={"50px"}  children='✈' />
                         <Input minH={"50px"} type='text' placeholder='where from?' value={depart} onChange={(e)=>{setdepart(e.target.value)}} />
                     </InputGroup>
-                    <Input minH={"50px"} bgColor={"white"} value={arrive} onChange={(e)=>{setarrive(e.target.value)}} type='tel' placeholder='where from?' />
+                    <Input minH={"50px"} bgColor={"white"} value={arrive} onChange={(e)=>{setarrive(e.target.value)}} type='tel' placeholder='to?' />
                     <Input minH={"50px"} bgColor={"white"} value={date} onChange={(e)=>{setdate(e.target.value)}} type={"date"} placeholder='Choose departure date' />
                     <Button onClick={handleclick} minH={"50px"} _hover={{bgColor:"white",color:"rgb(0,136,204)"}} border="2px" borderColor={"white"}  w={{base:"100%",md:"290px"}} colorScheme='telegram'>SEARCH</Button>
                 </Stack>
