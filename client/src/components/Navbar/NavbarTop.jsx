@@ -1,16 +1,16 @@
-import { Box, Button, Heading, Hide, Show, Text } from "@chakra-ui/react";
-import { googleLogout } from "@react-oauth/google";
+import {Box, Button, Heading, Hide, Show, Text} from "@chakra-ui/react";
+import {googleLogout} from "@react-oauth/google";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { isNotAuth } from "../../redux/auth/auth.actions";
+import {useDispatch, useSelector} from "react-redux";
+import {Link, useNavigate} from "react-router-dom";
+import {isNotAuth} from "../../redux/auth/auth.actions";
 import MenuBar from "../Chakra Comp/Menu";
 import Flag from "../Flag_Currency/Flag";
 export const NavbarTop = () => {
   const {login} = useSelector((store) => store.Authentication);
   let changingBtn;
-    login ? (changingBtn = "Logout") : (changingBtn = "Login");
-  
+  login ? (changingBtn = "Logout") : (changingBtn = "Login");
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -39,10 +39,13 @@ export const NavbarTop = () => {
           justifyContent="center"
           alignItems={"center"}
         >
-          <Heading fontSize={["md", "md", "2xl"]} fontFamily={"monospace"}>
+          <Link to="/">
             {" "}
-            <Link to="/">Treasury Trip</Link>
-          </Heading>
+            <Heading fontSize={[18, 21]} fontFamily={"monospace"}>
+              {" "}
+              Treasury Trip
+            </Heading>
+          </Link>
         </Box>
         <Box
           alignItems={"center"}
@@ -59,7 +62,7 @@ export const NavbarTop = () => {
             // border="1px solid"
             alignItems="center"
           >
-            <Text fontSize={["sm", "md"]}>INR</Text>
+            <Text fontSize={["md"]}>INR</Text>
             <Flag />
           </Box>
           <Hide breakpoint="(max-width: 1024px)">
@@ -89,7 +92,9 @@ export const NavbarTop = () => {
           </Hide>
         </Box>
         <Show breakpoint="(max-width: 600px)">
-          <MenuBar />
+          <Box display="flex" alignItems="center">
+            <MenuBar />
+          </Box>
         </Show>
       </Box>
     </>

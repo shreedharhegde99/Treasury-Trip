@@ -1,16 +1,18 @@
 import { Button, Checkbox, Container, Heading, HStack, Input, InputGroup, InputLeftAddon, Radio, RadioGroup, Select, Stack ,Text} from "@chakra-ui/react";
 import React from "react";
-import {useNavigate, useSearchParams} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
+// import {useNavigate, useSearchParams} from "react-router-dom"
 
 export const BookFlight = () => {
     const [value, setValue] = React.useState('1')
-    const[params,setparams]=useSearchParams()
+    // const[params,setparams]=useSearchParams()
     const[arrive,setarrive]=React.useState("")
     const[depart,setdepart]=React.useState("")
     const[date,setdate]=React.useState("")
     let navigate=useNavigate()
     const handleclick=()=>{
-        navigate(`search/result${"?arrive="+arrive+"&depart="+depart+"&"+"date="+date}`)
+        // navigate(`search/result${"?arrive="+arrive+"&depart="+depart+"&"+"date="+date}`)
+        navigate(`search/result?arrive=${arrive}&depart=${depart}&date=${date}`)
        
     }
     return (

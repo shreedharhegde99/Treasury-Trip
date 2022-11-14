@@ -1,4 +1,5 @@
-import { Container, Heading,Center, Tab, TabList, Tabs, Text,TabPanel,TabPanels, Stack } from "@chakra-ui/react";
+// import { Container, Heading,Center, Tab, TabList, Tabs, Text,TabPanel,TabPanels, Stack } from "@chakra-ui/react";
+import { Container, Heading,Center, Text, Stack } from "@chakra-ui/react";
 import React from "react";
 import { FlightCard } from "./FlightCard";
 export const Trendingflight = () => {

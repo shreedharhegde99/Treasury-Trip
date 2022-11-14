@@ -1,7 +1,8 @@
 import { Button, Heading, HStack, Text, useToast, VStack } from "@chakra-ui/react";
-import React,{useEffect, useState} from "react";
+// import React,{useEffect, useState} from "react";
+import React,{ useState} from "react";
 import { RiAddBoxFill } from "react-icons/ri"
-import { GrAddCircle } from "react-icons/gr"
+// import { GrAddCircle } from "react-icons/gr"
 import { FaMinusSquare } from "react-icons/fa"
 import { useNavigate, useSearchParams } from "react-router-dom";
 
@@ -48,13 +49,15 @@ export const Cart = ({details}) => {
 
         </HStack>
 
-        <HStack justifyContent={"space-between"}><Text fontSize={"18px"}>Flight Fare</Text><Text fontSize={"20px"}>{"₹ "+" "+(prc*ticket)}</Text></HStack>
+        {/* <HStack justifyContent={"space-between"}><Text fontSize={"18px"}>Flight Fare</Text><Text fontSize={"20px"}>{"₹ "+" "+(prc*ticket)}</Text></HStack> */}
+        <HStack justifyContent={"space-between"}><Text fontSize={"18px"}>Flight Fare</Text><Text fontSize={"20px"}>{`₹  ${prc*ticket}`}</Text></HStack>
         <HStack justifyContent={"space-between"}><Text as={"h4"} fontSize={"18px"}>Taxes and Fees</Text><Text fontSize={"20px"}>₹ 1499</Text></HStack>
         <HStack borderTop={"2px"} pt="20px" borderColor="silver" justifyContent={"space-between"}>
             <Heading fontSize={"26px"}>
                 Total 
             </Heading>
-            <Text fontSize={"20px"}>{"₹ "+" "+(prc*ticket+1499)}</Text>
+            {/* <Text fontSize={"20px"}>{"₹ "+" "+(prc*ticket+1499)}</Text> */}
+            <Text fontSize={"20px"}>{`₹ ${(prc*ticket)+1499}`}</Text>
         </HStack>
         <Button schema="telegram" colorScheme={"telegram"} onClick={handlecheckout}>Checkout</Button>
     </VStack>)

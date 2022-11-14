@@ -1,5 +1,7 @@
-import { FormControl, FormHelperText, FormLabel, Select, Input, Stack, InputGroup, InputLeftAddon, Heading, VStack} from "@chakra-ui/react"
-import React, { useState } from "react"
+// import { FormControl, FormHelperText, FormLabel, Select, Input, Stack, InputGroup, InputLeftAddon, Heading, VStack} from "@chakra-ui/react"
+import { FormControl,  Select,Input, Stack, InputGroup, InputLeftAddon, Heading, VStack} from "@chakra-ui/react"
+// import React, { useState } from "react"
+import React from "react"
 import {MdAlternateEmail,MdCall,MdPersonOutline,MdDriveFileRenameOutline} from "react-icons/md"
 
 export const Contactdetails = (props) => {

@@ -1,4 +1,5 @@
-import { Container, HStack, Image, VStack,Heading,Text } from "@chakra-ui/react";
+// import { Container, HStack, Image, VStack,Heading,Text } from "@chakra-ui/react";
+import { HStack, Image, VStack,Heading,Text } from "@chakra-ui/react";
 import React from "react";
 
 export const Flywordcard = (props) => {

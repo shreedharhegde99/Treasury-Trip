@@ -1,4 +1,5 @@
-import { Box, Image, SimpleGrid } from "@chakra-ui/react";
+// import { Box, Image, SimpleGrid } from "@chakra-ui/react";
+import {  Image, SimpleGrid } from "@chakra-ui/react";
 import "./featured.css";
 
 const Featured = () => {

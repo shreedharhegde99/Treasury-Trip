@@ -49,7 +49,7 @@ export default function NearByDestination() {
                     templateColumns={{lg:"repeat(3,1fr)",md:"repeat(2,1fr)",sm:"1fr"}}
                     gap={7}>
               <Box >
-                <HStack>
+                <HStack gap='4'>
                     <GiTreeDoor className="tree" fontSize={"3rem"}/>
                     <Stack>
                     <h4 style={{fontWeight:"bold",fontSize:".9rem"}}>Explore top attractions </h4>
@@ -58,7 +58,7 @@ export default function NearByDestination() {
                 </HStack>
               </Box>
               <Box>
-                <HStack>
+                <HStack gap='4'>
                     <BsCalendarCheck className="tree" fontSize={"3rem"}/>
                     <Stack>
                     <h4 style={{fontWeight:"bold",fontSize:".9rem"}}>Fast and flexible </h4>
@@ -67,7 +67,7 @@ export default function NearByDestination() {
                 </HStack>
               </Box>
               <Box>
-                <HStack>
+                <HStack gap='4'>
                     <FaHeadset className="tree" fontSize={"3rem"}/>
                     <Stack>
                     <h4 style={{fontWeight:"bold" ,fontSize:".9rem"}}>Support when you need it </h4>

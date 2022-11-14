@@ -1,8 +1,15 @@
 import { Box, Button, Text, Divider } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
-export default function PassengerBookingDetails() {
+export default function PassengerBookingDetails({ price }) {
+  const {
+    from,
+    to,
+    price: storePrice,
+  } = useSelector((state) => state.taxiData);
+
   return (
-    <Box w={{md:"md"}}>
+    <Box w={{ md: "md" }}>
       <Box>
         <Box p="4" bg="blue.100" fontWeight="semibold">
           Your booking details
@@ -11,20 +18,26 @@ export default function PassengerBookingDetails() {
       <Box p="4">
         <Box py="2">
           <Text>From</Text>
-          <Text></Text>
+          <Text fontSize="lg" fontWeight="bold">
+            {from}
+          </Text>
         </Box>
         <Box py="2">
           <Text>To</Text>
-          <Text></Text>
+          <Text fontSize="lg" fontWeight="bold">
+            {to}
+          </Text>
         </Box>
         <Box py="2">
-          <Text>Passengers</Text>
-          <Text></Text>
+          <Text>Max Passengers</Text>
+          <Text fontSize="lg" fontWeight="bold">
+            4
+          </Text>
         </Box>
         <Divider />
         <Box py="2">
           <Text>Yout trip</Text>
-          <Text></Text>
+          <Text fontSize="lg" fontWeight="bold">{`${from} to ${to}`}</Text>
         </Box>
         <Box>
           <Button
@@ -47,7 +60,7 @@ export default function PassengerBookingDetails() {
         <Box py="2">
           <Text>Total price</Text>
           <Text fontWeight="semibold" fontSize="4xl">
-            Rs 100{" "}
+            Rs {price || storePrice}
           </Text>
         </Box>
       </Box>

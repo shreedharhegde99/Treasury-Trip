@@ -1,11 +1,12 @@
-import { Button, Checkbox, Container, Heading, HStack, Input, InputGroup, InputLeftAddon, Radio, RadioGroup, Select, Stack ,Text} from "@chakra-ui/react";
+// import { Button, Checkbox, Container, Heading, HStack, Input, InputGroup, InputLeftAddon, Radio, RadioGroup, Select, Stack ,Text} from "@chakra-ui/react";
+import { Button, Checkbox, Container, HStack, Input, InputGroup, InputLeftAddon, Radio, RadioGroup, Select, Stack} from "@chakra-ui/react";
 import React from "react";
 
 export const Searchflight = () => {
     const [value, setValue] = React.useState('1')
-    const[arrive,setarrive]=React.useState("")
-    const[depart,setdepart]=React.useState("")
-    const[date,setdate]=React.useState("")
+    // const[arrive,setarrive]=React.useState("")
+    // const[depart,setdepart]=React.useState("")
+    // const[date,setdate]=React.useState("")
    
     return (
         <Container border="2px" borderBottomColor={"silver"} borderRightColor="silver" borderLeftColor="silver"  borderTopColor="silver" bgColor={"#f9f9f9"}borderRadius="10px" minW={"100%"} textAlign="left" p="20px" mb={"40px"}>
