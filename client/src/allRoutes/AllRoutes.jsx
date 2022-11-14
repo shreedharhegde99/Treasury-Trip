@@ -35,11 +35,11 @@ export default function AllRoutes() {
       <Route path="/register" element={<Register />} />
       <Route path="/flights/search/:myway" element={<FlightSearch />} />
       <Route
-        path="/flights/book"
+        path="/flights/book/:id"
         element={
-          <PrivateRoute>
-            <PersonalDetails />
-          </PrivateRoute>
+         <PrivateRoute><PersonalDetails /></PrivateRoute>
+            
+          
         }
       />
       <Route path="/treasury/testimonials" element={<GridBlurredBackdrop />} />
