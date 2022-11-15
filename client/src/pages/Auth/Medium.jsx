@@ -1,13 +1,17 @@
 import { Box, HStack, Text, useToast } from "@chakra-ui/react";
 import { useGoogleLogin } from "@react-oauth/google";
 import React from "react";
-import { AiFillFacebook, AiFillGoogleCircle, AiFillMobile } from "react-icons/ai";
+import {
+  AiFillFacebook,
+  AiFillGoogleCircle,
+  AiFillMobile,
+} from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { isAuth } from "../../redux/auth/auth.actions";
 const Medium = () => {
-  const {login} = useSelector((state) => state.Authentication);
-  console.log(login);
+  const { login } = useSelector((state) => state.Authentication);
+  // console.log(login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
@@ -47,7 +51,7 @@ const Medium = () => {
             <Box
               display={"flex"}
               boxShadow="md"
-              _hover={{border: "1px solid"}}
+              _hover={{ border: "1px solid" }}
               p={4}
             >
               <AiFillFacebook fontSize={40} />
@@ -55,7 +59,7 @@ const Medium = () => {
             <Box
               display={"flex"}
               boxShadow="md"
-              _hover={{border: "1px solid"}}
+              _hover={{ border: "1px solid" }}
               p={4}
             >
               <AiFillGoogleCircle onClick={() => loging()} fontSize={40} />
@@ -63,7 +67,7 @@ const Medium = () => {
             <Box
               display={"flex"}
               boxShadow="md"
-              _hover={{border: "1px solid"}}
+              _hover={{ border: "1px solid" }}
               p={4}
             >
               <AiFillMobile fontSize={40} />

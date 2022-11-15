@@ -7,11 +7,10 @@ import { Feature } from "../components/Flights/Feature";
 import { Flyword } from "../components/Flights/Flyword";
 import { Popularflight } from "../components/Flights/Popularflight";
 import { Trendingflight } from "../components/Flights/Trendingflight";
-import NavbarR from "../components/Navbar/NavbarR";
+
 export const Flights = () => {
   return (
     <Box>
-      <NavbarR />
       <Container
         maxW={"100vw"}
         overflow="hidden"

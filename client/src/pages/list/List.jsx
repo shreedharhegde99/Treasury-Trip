@@ -4,7 +4,6 @@ import "./list.css";
 // import { format } from "date-fns";
 // import { DateRange } from "react-date-range";
 import SearchItem from "../../components/Home/SearchData/SearchItem";
-import NavbarR from "../../components/Navbar/NavbarR";
 // import { div } from "@chakra-ui/react";
 
 const List = () => {
@@ -16,13 +15,10 @@ const List = () => {
 
   return (
     <div>
-     <NavbarR/>
-      <div className="listContainer" columns={{base:1,sm:2}}>
-        <div className="listWrapper"  >
-          
+      <div className="listContainer" columns={{ base: 1, sm: 2 }}>
+        <div className="listWrapper">
           <div className="listResult">
             <SearchItem />
-           
           </div>
         </div>
       </div>

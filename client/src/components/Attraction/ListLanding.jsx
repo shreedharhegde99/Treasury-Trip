@@ -20,7 +20,6 @@ import {
   loaded,
 } from "../../redux/attractions/attractions.action";
 import { Navigate, useParams } from "react-router-dom";
-import NavbarR from "../Navbar/NavbarR";
 export default function ListLanding() {
   const { cityData, dataLoaded } = useSelector((state) => state.attraction);
   const [data, setData] = useState(cityData);
@@ -66,8 +65,8 @@ export default function ListLanding() {
 
   const highToLow = () => {
     let updatedData = [...data].sort((a, b) => {
-      let  price = a.price.trim().split(".")[1];
-      let  prices = b.price.trim().split(".")[1];
+      let price = a.price.trim().split(".")[1];
+      let prices = b.price.trim().split(".")[1];
       price = price.split(",").join("");
       prices = prices.split(",").join("");
       // console.log(Number(price),Number(prices))
@@ -79,7 +78,6 @@ export default function ListLanding() {
 
   return (
     <Box>
-      <NavbarR />
       <Box
         ml={"10%"}
         pt={"3%"}

@@ -1,20 +1,18 @@
 import AllRoutes from "./allRoutes/AllRoutes";
 import "./App.css";
 import ScrollToTop from "./components/common/ScrollToTop";
-
 import FooterSm from "./components/Footers/Another/FooterSm";
-
-import {NavbarTop} from "./components/Navbar/NavbarTop";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div>
-      <NavbarTop />
+      <Navbar />
       <AllRoutes />
       <FooterSm />
-      <ScrollToTop/>
+      <ScrollToTop />
     </div>
-  )
+  );
 }
 
 export default App;
