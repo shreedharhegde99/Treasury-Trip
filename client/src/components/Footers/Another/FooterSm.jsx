@@ -13,8 +13,8 @@ import {
   Image,
   Heading,
 } from "@chakra-ui/react";
-import {FaInstagram, FaTwitter, FaYoutube} from "react-icons/fa";
-import {BiMailSend} from "react-icons/bi";
+import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { BiMailSend } from "react-icons/bi";
 import logo from "../../../assets/Logo.png";
 const Logo = (props) => {
   return (
@@ -25,13 +25,15 @@ const Logo = (props) => {
       w={"100%"}
       alignItems="center"
     >
-      <Image w={"14"} borderRadius={"6rem"} src={logo} />
-      <Heading fontSize={24}>Treasury Trip</Heading>
+      <Box>
+        <Image maxW={"20"} borderRadius={"6rem"} src={logo} />
+      </Box>
+      <Heading fontSize={{ base: 28, sm: 24 }}>Treasury Trip</Heading>
     </Box>
   );
 };
 
-const SocialButton = ({children, label, href}) => {
+const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
@@ -55,7 +57,7 @@ const SocialButton = ({children, label, href}) => {
   );
 };
 
-const ListHeader = ({children}) => {
+const ListHeader = ({ children }) => {
   return (
     <>
       <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
@@ -70,7 +72,7 @@ export default function LargeWithNewsletter() {
     <Box bg={"#00224F"} color={"white"}>
       <Container as={Stack} maxW={"90%"} py={10}>
         <SimpleGrid
-          templateColumns={{sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr"}}
+          templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 2fr" }}
           spacing={8}
         >
           <Stack spacing={4}>
