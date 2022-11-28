@@ -51,12 +51,12 @@ const backgrounds = [
 ];
 
 function TestimonialCard(props) {
-  const {name, role, content, avatar, index} = props;
+  const { name, role, content, avatar, index } = props;
   return (
     <Flex
       boxShadow={"lg"}
       maxW={"640px"}
-      direction={{base: "column-reverse", md: "row"}}
+      direction={{ base: "column-reverse", md: "row" }}
       width={"full"}
       rounded={"xl"}
       p={10}
@@ -119,7 +119,7 @@ function TestimonialCard(props) {
         height={"80px"}
         width={"80px"}
         alignSelf={"center"}
-        m={{base: "0 0 35px 0", md: "0 0 0 50px"}}
+        m={{ base: "0 0 35px 0", md: "0 0 0 50px" }}
       />
     </Flex>
   );
@@ -134,7 +134,7 @@ export default function GridBlurredBackdrop() {
       direction={"column"}
       width={"full"}
     >
-      <Box width={{base: "full", sm: "lg", lg: "xl"}} margin={"auto"}>
+      <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
         <chakra.h3
           fontFamily={"Work Sans"}
           fontWeight={"bold"}
@@ -167,9 +167,14 @@ export default function GridBlurredBackdrop() {
           influencers use Treasury Trip to manage their travel booking!
         </chakra.h2>
       </Box>
-      <SimpleGrid columns={{base: 1, xl: 2}} spacing={"20"} mt={16} mx={"auto"}>
+      <SimpleGrid
+        columns={{ base: 1, xl: 2 }}
+        spacing={"20"}
+        mt={16}
+        mx={"auto"}
+      >
         {testimonials.map((cardInfo, index) => (
-          <TestimonialCard {...cardInfo} index={index} />
+          <TestimonialCard {...cardInfo} index={index} key={index} />
         ))}
       </SimpleGrid>
       <Box>
