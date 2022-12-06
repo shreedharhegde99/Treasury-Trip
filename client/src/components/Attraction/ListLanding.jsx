@@ -52,29 +52,17 @@ export default function ListLanding() {
 
   const sortLowToHigh = () => {
     let updatedData = [...data].sort((a, b) => {
-      let price = a.price.trim().split(".")[1];
-      let prices = b.price.trim().split(".")[1];
-      price = price.split(",").join("");
-      prices = prices.split(",").join("");
-      // console.log(Number(price),Number(prices))
-
-      return Number(price) - Number(prices);
+      return Number(a.price) - Number(b.price);
     });
     setData(updatedData);
   };
 
   const highToLow = () => {
     let updatedData = [...data].sort((a, b) => {
-      let price = a.price.trim().split(".")[1];
-      let prices = b.price.trim().split(".")[1];
-      price = price.split(",").join("");
-      prices = prices.split(",").join("");
-      // console.log(Number(price),Number(prices))
-      return Number(prices) - Number(price);
+      return Number(b.price) - Number(a.price);
     });
     setData(updatedData);
   };
-  // console.log(data)
 
   return (
     <Box>
