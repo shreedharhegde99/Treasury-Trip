@@ -58,7 +58,7 @@ export default function UpperSection() {
            <Box bg='#F5F5F5' w='100%' h="auto" pb='20'>           
                  <h1 style={{fontSize:"30px",fontWeight:"bold",marginLeft:"20%",paddingTop:"30px"}}>Find and book a great experience</h1>
                  <p  style={{fontSize:"18px",color:"grey",marginLeft:"20%"}}>Discover more of your destination and make the most of your trip</p>
-                 <Stack direction={'flex'}  w="70%" style={{marginTop:"27px",marginLeft:"20%"}} position='relative'  >
+                 <Stack  bgColor={"orange"}  border="2px" borderColor={"orange"} borderRadius={"5px"} direction={{base:"column",md:"row"}} w="70%" style={{marginTop:"27px",marginLeft:"20%"}} position='relative'  >
                     <InputGroup>
                     <InputLeftElement 
                         children={<GiTreeDoor color='gray.300' size="30px" />}
