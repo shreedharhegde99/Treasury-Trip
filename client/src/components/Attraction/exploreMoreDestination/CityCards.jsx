@@ -12,6 +12,7 @@ export default function CityCards({ country }) {
         `${backendURL}/attractions?country=${country}`
       );
       setData(response.data);
+      // console.log(response.data)
     } catch (error) {
       console.log(error);
     }
@@ -32,8 +33,8 @@ export default function CityCards({ country }) {
       {data.map((el) => (
         <div key={el._id}>
           <div className="container_san">
-            <img src={el.image} alt={el.place} />
-            <p className="text">{el.place}</p>
+            <img src={el.image} alt={el.places} />
+            <p className="text">{el.places}</p>
             <p className="text2">{el.todo}</p>
           </div>
         </div>
