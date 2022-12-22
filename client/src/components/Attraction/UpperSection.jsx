@@ -1,4 +1,4 @@
-import {Box, Button, Input,InputGroup,InputLeftElement, Stack} from '@chakra-ui/react'
+import {Box, Button, Input,InputGroup,InputLeftElement, Stack, Text, VStack} from '@chakra-ui/react'
 import {GiTreeDoor} from "react-icons/gi"
 import { FaInfoCircle } from "react-icons/fa";
 import NearByDestination from './NearByDestination';
@@ -52,25 +52,37 @@ export default function UpperSection() {
     // if(dataLoaded){
     //     return navigate(`attractions/${text}`)
     // }
-    
+//     const tileDisabled = ({ activeStartDate, date, view }) => {
+//             return date < new Date()
+//     }
+const disablePastDate = () => {
+    const today = new Date();
+    const dd =today.getDate() + 1
+    const mm =today.getMonth() + 1 
+    const yyyy = today.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+};
+
     return (
         <>
-           <Box bg='#F5F5F5' w='100%' h="auto" pb='20'>           
-                 <h1 style={{fontSize:"30px",fontWeight:"bold",marginLeft:"20%",paddingTop:"30px"}}>Find and book a great experience</h1>
-                 <p  style={{fontSize:"18px",color:"grey",marginLeft:"20%"}}>Discover more of your destination and make the most of your trip</p>
-                 <Stack  bgColor={"orange"}  border="2px" borderColor={"orange"} borderRadius={"5px"} direction={{base:"column",md:"row"}} w="70%" style={{marginTop:"27px",marginLeft:"20%"}} position='relative'  >
+           <Box bg='#F5F5F5' w='100%' h="auto" pb='20'>        
+           {/* style={{fontSize:"30px",fontWeight:"bold",marginLeft:"20%",paddingTop:"30px"}}    */}
+           {/* style={{fontSize:"18px",color:"grey",marginLeft:"20%"}} */}
+                 <VStack>
+                 <Text fontWeight={"bold"} fontSize={{base:"27px", md:"30px"}} paddingLeft={{base:58,md:0}} paddingRight={{base:10,md:80}} paddingTop={10}>Find and book a great experience</Text>
+                 <Text fontSize="19px" color={"#404010"} paddingLeft={{base:58,md:0}} paddingRight={{base:10,md:60}}>Discover more of your destination and make the most of your trip</Text> 
+                 </VStack>
+                 <Stack   bgColor={"orange"}  border="2px" borderColor={"orange"} borderRadius={"5px"} direction={{base:"column",md:"row"}} w="70%" style={{marginTop:"27px"}} marginLeft={{base:"15%",md:"19%"}} position='relative'  >
                     <InputGroup>
-                    <InputLeftElement 
-                        children={<GiTreeDoor color='gray.300' size="30px" />}
+                    <InputLeftElement  
+                        children={ <GiTreeDoor color='green' size={{base:50,md :30}} />}
                     />
-                        <Input onChange={handleChange}  border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  p="25px" pl="40px" placeholder='Where are you going'/>
-                         {/* <VStack position={'absolute'} top='75px' left={'82px'} bgColor="white" p={"4"}>
-                            {suggestion.map((city)=><Box onClick={()=>setText(city.toLowerCase())} key={city}> {city}</Box>)}
-                         </VStack> */}
-
+                        <Input onChange={handleChange}  border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  p="25px" pl="40px" placeholder='Where are you going' fontSize={15}/>
                     </InputGroup>                   
-                      <Input onChange={(e)=>setDate(e.target.value)} border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" placeholder='Select your dates' type="date" p="25px" pl="40px"/>                   
-                   <Button onClick={handleSearch} border="4px" borderColor={"orange"} bg="#006CE4" color="white" p="25px 40px 25px 40px">Search</Button>
+                      <Input fontSize={15} onChange={(e)=>setDate(e.target.value)} border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" type="date" p="25px" pl="40px"                       
+                        min={disablePastDate()}
+                      />                   
+                   <Button fontSize={15} onClick={handleSearch} border="4px" borderColor={"orange"} bg="#006CE4" color="white" p="25px 40px 25px 40px">Search</Button>
                  </Stack>
            </Box>
            <Box style={{borderRadius:"10px",border:"1px solid lightgrey",width:"80%",height:"80px",margin:"auto",marginTop:"40px"}}> 

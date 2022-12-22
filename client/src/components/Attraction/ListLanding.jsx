@@ -64,6 +64,14 @@ export default function ListLanding() {
     setData(updatedData);
   };
 
+  const disablePastDate = () => {
+    const today = new Date();
+    const dd =today.getDate() + 1
+    const mm =today.getMonth() + 1 
+    const yyyy = today.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+  };
+
   return (
     <Box>
       <Box
@@ -87,7 +95,7 @@ export default function ListLanding() {
                 placeholder="Museum, tours,activities..."
               />
             </InputGroup>
-            <Input type="date" />
+            <Input type="date" min={disablePastDate()} />
             <Button
               onClick={() => handleSearch(citySearch)}
               border="2px"
