@@ -57,7 +57,7 @@ export default function UpperSection() {
 //     }
 const disablePastDate = () => {
     const today = new Date();
-    const dd =today.getDate() + 1
+    const dd =today.getDate()
     const mm =today.getMonth() + 1 
     const yyyy = today.getFullYear();
     return yyyy + "-" + mm + "-" + dd;
