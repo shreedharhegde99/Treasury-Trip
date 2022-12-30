@@ -66,8 +66,6 @@ const disablePastDate = () => {
     return (
         <>
            <Box bg='#F5F5F5' w='100%' h="auto" pb='20'>        
-           {/* style={{fontSize:"30px",fontWeight:"bold",marginLeft:"20%",paddingTop:"30px"}}    */}
-           {/* style={{fontSize:"18px",color:"grey",marginLeft:"20%"}} */}
                  <VStack>
                  <Text fontWeight={"bold"} fontSize={{base:"27px", md:"30px"}} paddingLeft={{base:58,md:0}} paddingRight={{base:10,md:80}} paddingTop={10}>Find and book a great experience</Text>
                  <Text fontSize="19px" color={"#404010"} paddingLeft={{base:58,md:0}} paddingRight={{base:10,md:60}}>Discover more of your destination and make the most of your trip</Text> 
