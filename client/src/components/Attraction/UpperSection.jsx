@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function UpperSection() {
     const [text,setText]=useState('')
-    const [date,setDate]=useState('')
+    // const [date,setDate]=useState('')
     // const [suggestion,setSuggestion]=useState([])
     const {dataLoaded}=useSelector(state=>state.attraction)
     // console.log(dataLoaded);
@@ -57,8 +57,8 @@ export default function UpperSection() {
 //     }
 const disablePastDate = () => {
     const today = new Date();
-    const dd =today.getDate()
-    const mm =today.getMonth() + 1 
+    const dd = String(today.getDate()).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0"); 
     const yyyy = today.getFullYear();
     return yyyy + "-" + mm + "-" + dd;
 };
@@ -77,8 +77,8 @@ const disablePastDate = () => {
                     />
                         <Input onChange={handleChange}  border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  p="25px" pl="40px" placeholder='Where are you going' fontSize={15}/>
                     </InputGroup>                   
-                      <Input fontSize={15} onChange={(e)=>setDate(e.target.value)} border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" type="date" p="25px" pl="40px"                       
-                        min={disablePastDate()}
+                      <Input fontSize={15} border="4px" borderColor={"orange"} borderRadius={"5px"} bgColor={"white"}  cursor="pointer" type="date" p="25px" pl="40px"                       
+                       min={disablePastDate()}
                       />                   
                    <Button fontSize={15} onClick={handleSearch} border="4px" borderColor={"orange"} bg="#006CE4" color="white" p="25px 40px 25px 40px">Search</Button>
                  </Stack>
